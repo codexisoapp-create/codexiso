@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codexiso — Index of Stolen Originals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --red:       #E8160C;
+  --dark:      #0F0D0B;
+  --dark2:     #1A1714;
+  --dark3:     #242020;
+  --mid:       #9B9590;
+  --warm:      #E4DFD9;
+  --white:     #FFFFFF;
+  --gold:      #C5A028;
+  --purple:    #8B7CF6;
+  --green:     #3D9970;
+  --amber:     #D4752A;
+  --blue:      #6B9FC4;
+  --font-head: 'Barlow Condensed', sans-serif;
+  --font-body: 'Libre Baskerville', serif;
+  --r:         4px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark);
+  color: var(--warm);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font-head); border: none; }
+
+/* ── NAV ───────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+  height: 60px;
+  background: rgba(15,13,11,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.logo { display: flex; align-items: center; gap: 0.65rem; }
+.logo-seal {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 800; font-size: 11px;
+  letter-spacing: 0.05em; color: white;
+}
+.logo-name {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: 17px; letter-spacing: 0.12em; text-transform: uppercase; color: white;
+}
+.logo-name em { font-style: normal; color: var(--red); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-family: var(--font-head); font-size: 13px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mid);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: white; }
+.nav-search {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px; padding: 0.35rem 1rem;
+}
+.nav-search input {
+  background: none; border: none; outline: none; color: white;
+  font-family: var(--font-head); font-size: 13px; letter-spacing: 0.04em;
+  width: 160px;
+}
+.nav-search input::placeholder { color: var(--mid); }
+.nav-search-icon { color: var(--mid); font-size: 14px; }
+.nav-btn {
+  font-family: var(--font-head); font-weight: 600; font-size: 13px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--red); color: white;
+  border-radius: 3px; padding: 0.45rem 1.1rem;
+  transition: background 0.2s;
+}
+.nav-btn:hover { background: #c91209; }
+
+/* ── HERO ──────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 60px;
+}
+.hero-left {
+  background: var(--dark);
+  padding: 7rem 5vw 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+  margin-bottom: 2rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 28px; height: 1px; background: var(--red);
+}
+.hero-h1 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(4.5rem, 8vw, 8rem);
+  line-height: 0.9; letter-spacing: -0.02em;
+  color: white; text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.hero-h1 .thin { font-weight: 300; }
+.hero-h1 .red { color: var(--red); }
+.hero-body {
+  font-size: 1.0625rem; line-height: 1.7; color: var(--mid);
+  max-width: 400px; margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.btn-red {
+  font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--red); color: white;
+  padding: 0.85rem 2rem; border-radius: var(--r);
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-red:hover { background: #c91209; transform: translateY(-1px); }
+.btn-ghost {
+  font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  background: transparent; color: var(--mid);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.85rem 1.5rem; border-radius: var(--r);
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: white; border-color: rgba(255,255,255,0.4); }
+
+.hero-right {
+  background: var(--warm);
+  padding: 7rem 5vw 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 2.5rem;
+  border-left: 3px solid var(--red);
+}
+.hero-principles-label {
+  font-family: var(--font-head); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 1.5rem;
+}
+.principle {
+  display: grid; grid-template-columns: 3rem 1fr;
+  gap: 0; padding: 1.25rem 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.principle:last-child { border-bottom: 1px solid rgba(0,0,0,0.1); }
+.principle-num {
+  font-family: var(--font-head); font-weight: 800; font-size: 11px;
+  letter-spacing: 0.1em; color: var(--red); padding-top: 2px;
+}
+.principle-text { color: #2a2520; }
+.principle-text strong {
+  display: block; font-family: var(--font-head); font-weight: 700;
+  font-size: 15px; letter-spacing: 0.02em; margin-bottom: 0.3rem;
+  color: var(--dark);
+}
+.principle-text p { font-size: 0.875rem; line-height: 1.6; color: #4a4540; margin: 0; }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 2px solid var(--dark); padding-top: 2rem; gap: 1rem;
+}
+.stat-n {
+  font-family: var(--font-head); font-weight: 800; font-size: 2.25rem;
+  line-height: 1; color: var(--dark);
+}
+.stat-n sup { font-size: 1rem; font-weight: 600; }
+.stat-l {
+  font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: #6a6560;
+  margin-top: 0.3rem;
+}
+
+/* ── TICKER ────────────────────────────────────────── */
+.ticker {
+  background: var(--red); height: 36px; overflow: hidden;
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
+.ticker-track {
+  display: inline-flex; height: 100%;
+  animation: tick 40s linear infinite;
+  white-space: nowrap;
+}
+.tick-item {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0 1.5rem;
+  font-family: var(--font-head); font-weight: 700;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+}
+.tick-dot { opacity: 0.5; font-size: 8px; }
+@keyframes tick { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+
+/* ── LIBRARY SECTION ───────────────────────────────── */
+.library {
+  padding: 6rem 3vw 4rem;
+  max-width: 1600px; margin: 0 auto;
+}
+.section-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.section-eyebrow {
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1; letter-spacing: -0.01em;
+  text-transform: uppercase; color: white;
+}
+.section-count {
+  font-family: var(--font-head); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--mid);
+}
+
+/* Filter tabs */
+.filter-bar {
+  display: flex; align-items: center; gap: 0; flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 3rem;
+}
+.ftab {
+  font-family: var(--font-head); font-weight: 600; font-size: 13px;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  background: none; color: var(--mid);
+  padding: 0.8rem 1.4rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.ftab:hover { color: white; }
+.ftab.active { color: white; border-bottom-color: var(--red); }
+.ftab .count {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  background: rgba(255,255,255,0.1); border-radius: 10px;
+  padding: 1px 6px; margin-left: 5px; color: var(--mid);
+}
+.ftab.active .count { background: rgba(232,22,12,0.2); color: var(--red); }
+
+/* Book grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── BOOK CARD ─────────────────────────────────────── */
+.book-card {
+  cursor: pointer;
+  position: relative;
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex; flex-direction: column;
+}
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  border-color: rgba(232,22,12,0.3);
+}
+
+/* The CSS-rendered book cover */
+.book-cover {
+  position: relative;
+  background: var(--dark);
+  aspect-ratio: 3/4;
+  display: flex; flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+.book-cover-top-rule {
+  height: 4px; background: var(--red); flex-shrink: 0;
+}
+.book-cover-inner {
+  flex: 1; display: flex; flex-direction: column;
+  padding: 1rem 0.9rem 0.75rem;
+  position: relative;
+}
+.book-cover-cat-line {
+  font-family: var(--font-head); font-size: 8px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--red); margin-bottom: auto;
+}
+.book-cover-title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(14px, 2.2vw, 18px);
+  line-height: 1.05; letter-spacing: 0.01em; text-transform: uppercase;
+  color: white; margin-bottom: 0.4rem;
+  word-break: break-word;
+}
+.book-cover-sub {
+  font-family: var(--font-head); font-size: 9px; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--mid);
+}
+.book-cover-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 0.5rem 0.9rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.book-cover-logo {
+  font-family: var(--font-head); font-size: 7px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25);
+}
+.book-cover-price-tag {
+  font-family: var(--font-head); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.05em; color: var(--red);
+}
+
+/* Book card info below cover */
+.book-info {
+  padding: 0.75rem 0.875rem;
+  display: flex; flex-direction: column; gap: 0.35rem;
+  flex: 1;
+}
+.book-info-title {
+  font-family: var(--font-head); font-weight: 700; font-size: 13px;
+  letter-spacing: 0.02em; color: white; line-height: 1.2;
+}
+.book-info-close {
+  font-size: 11px; font-family: var(--font-body); font-style: italic;
+  color: var(--mid); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.book-info-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: auto; padding-top: 0.5rem;
+}
+.book-cat-badge {
+  font-family: var(--font-head); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 2px;
+}
+.book-unlock-btn {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  background: none; color: var(--red);
+  border: 1px solid rgba(232,22,12,0.35);
+  padding: 3px 8px; border-radius: 2px;
+  transition: background 0.15s, color 0.15s;
+}
+.book-unlock-btn:hover { background: var(--red); color: white; }
+
+/* Category colors */
+.tag-gnostic .book-cover-cat-line,
+.tag-gnostic .book-cat-badge { color: var(--purple); }
+.tag-gnostic .book-cover-top-rule { background: var(--purple); }
+.tag-gnostic .book-cat-badge { background: rgba(139,124,246,0.12); }
+.tag-gnostic .book-cover-price-tag,
+.tag-gnostic .book-unlock-btn { color: var(--purple); border-color: rgba(139,124,246,0.3); }
+.tag-gnostic .book-unlock-btn:hover { background: var(--purple); color: white; }
+
+.tag-apocrypha .book-cover-cat-line,
+.tag-apocrypha .book-cat-badge { color: var(--red); }
+.tag-apocrypha .book-cover-top-rule { background: var(--red); }
+.tag-apocrypha .book-cat-badge { background: rgba(232,22,12,0.12); }
+
+.tag-hermetic .book-cover-cat-line,
+.tag-hermetic .book-cat-badge { color: var(--gold); }
+.tag-hermetic .book-cover-top-rule { background: var(--gold); }
+.tag-hermetic .book-cat-badge { background: rgba(197,160,40,0.12); }
+.tag-hermetic .book-cover-price-tag,
+.tag-hermetic .book-unlock-btn { color: var(--gold); border-color: rgba(197,160,40,0.3); }
+.tag-hermetic .book-unlock-btn:hover { background: var(--gold); color: white; }
+
+.tag-mystery .book-cover-cat-line,
+.tag-mystery .book-cat-badge { color: var(--green); }
+.tag-mystery .book-cover-top-rule { background: var(--green); }
+.tag-mystery .book-cat-badge { background: rgba(61,153,112,0.12); }
+.tag-mystery .book-cover-price-tag,
+.tag-mystery .book-unlock-btn { color: var(--green); border-color: rgba(61,153,112,0.3); }
+.tag-mystery .book-unlock-btn:hover { background: var(--green); color: white; }
+
+.tag-ancient .book-cover-cat-line,
+.tag-ancient .book-cat-badge { color: var(--amber); }
+.tag-ancient .book-cover-top-rule { background: var(--amber); }
+.tag-ancient .book-cat-badge { background: rgba(212,117,42,0.12); }
+.tag-ancient .book-cover-price-tag,
+.tag-ancient .book-unlock-btn { color: var(--amber); border-color: rgba(212,117,42,0.3); }
+.tag-ancient .book-unlock-btn:hover { background: var(--amber); color: white; }
+
+.tag-kabbalah .book-cover-cat-line,
+.tag-kabbalah .book-cat-badge { color: var(--blue); }
+.tag-kabbalah .book-cover-top-rule { background: var(--blue); }
+.tag-kabbalah .book-cat-badge { background: rgba(107,159,196,0.12); }
+.tag-kabbalah .book-cover-price-tag,
+.tag-kabbalah .book-unlock-btn { color: var(--blue); border-color: rgba(107,159,196,0.3); }
+.tag-kabbalah .book-unlock-btn:hover { background: var(--blue); color: white; }
+
+/* hidden state */
+.book-card.hidden { display: none; }
+
+/* ── MISSION SECTION ───────────────────────────────── */
+.mission {
+  background: var(--dark2);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.mission-left {
+  padding: 7rem 5vw;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.mission-left .section-eyebrow { color: var(--red); }
+.mission-h {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.92; letter-spacing: -0.01em;
+  text-transform: uppercase; color: white;
+  margin: 1rem 0 2.5rem;
+}
+.mission-quote {
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--red);
+}
+.mission-quote p {
+  font-style: italic; font-size: 1.0625rem; line-height: 1.75;
+  color: var(--mid); max-width: 380px;
+}
+.mission-right {
+  padding: 7rem 5vw;
+  display: flex; flex-direction: column; gap: 0;
+  justify-content: center;
+}
+.mission-point {
+  display: grid; grid-template-columns: 3.5rem 1fr;
+  gap: 0; padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mission-point:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+.mp-num {
+  font-family: var(--font-head); font-weight: 800; font-size: 12px;
+  letter-spacing: 0.1em; color: var(--red); padding-top: 3px;
+}
+.mp-title {
+  font-family: var(--font-head); font-weight: 700; font-size: 18px;
+  letter-spacing: 0.02em; color: white; margin-bottom: 0.4rem;
+}
+.mp-body { font-size: 0.9rem; color: var(--mid); line-height: 1.65; }
+
+/* ── FEATURED ──────────────────────────────────────── */
+.featured {
+  background: var(--red);
+  display: grid; grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.featured-left {
+  padding: 7rem 5vw;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.featured-eyebrow {
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+}
+.featured-title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  line-height: 0.92; letter-spacing: -0.01em;
+  text-transform: uppercase; color: white;
+  margin-bottom: 1.5rem;
+}
+.featured-body {
+  font-style: italic; font-size: 1.0625rem; line-height: 1.7;
+  color: rgba(255,255,255,0.85); max-width: 380px; margin-bottom: 2rem;
+}
+.featured-meta {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.fm-item { display: flex; flex-direction: column; }
+.fm-item strong {
+  font-family: var(--font-head); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6);
+  margin-bottom: 2px;
+}
+.fm-item span { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: white; }
+.featured-cta { display: flex; align-items: center; gap: 1.5rem; }
+.featured-price {
+  font-family: var(--font-head); font-weight: 800; font-size: 2rem; color: white;
+}
+.btn-white {
+  font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+  background: white; color: var(--red);
+  padding: 0.85rem 2rem; border-radius: var(--r);
+  transition: opacity 0.2s;
+}
+.btn-white:hover { opacity: 0.9; }
+
+.featured-right {
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.15);
+  padding: 5rem 3vw;
+}
+.featured-book-mock {
+  width: min(260px, 45%);
+  aspect-ratio: 3/4;
+  background: var(--dark);
+  border-radius: 3px;
+  box-shadow: -8px 8px 40px rgba(0,0,0,0.5), -2px 0 0 rgba(0,0,0,0.3);
+  display: flex; flex-direction: column; overflow: hidden;
+  position: relative;
+}
+.featured-book-mock .book-cover-top-rule { height: 5px; }
+.featured-book-mock-inner {
+  flex: 1; padding: 1.5rem 1.25rem;
+  display: flex; flex-direction: column;
+}
+.featured-book-mock-cat {
+  font-family: var(--font-head); font-size: 8px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--red); margin-bottom: auto;
+}
+.featured-book-mock-title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: 22px; line-height: 1.05; text-transform: uppercase; color: white;
+  margin-bottom: 0.5rem;
+}
+.featured-book-mock-sub {
+  font-family: var(--font-head); font-size: 10px; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid);
+}
+.featured-book-mock-foot {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-head); font-size: 8px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2);
+}
+
+/* ── PROOF / TESTIMONIALS ──────────────────────────── */
+.proof {
+  padding: 7rem 3vw;
+  max-width: 1200px; margin: 0 auto;
+}
+.proof-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+  margin-top: 3rem;
+}
+.proof-card {
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--r);
+  padding: 2rem;
+}
+.proof-stars {
+  color: var(--red); font-size: 14px; letter-spacing: 2px; margin-bottom: 1rem;
+}
+.proof-text {
+  font-style: italic; font-size: 0.9375rem; line-height: 1.75;
+  color: var(--warm); margin-bottom: 1.25rem;
+}
+.proof-author {
+  font-family: var(--font-head); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid);
+}
+
+/* ── FOOTER ────────────────────────────────────────── */
+footer { background: var(--dark2); border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; padding: 5rem 3vw 4rem; max-width: 1400px; margin: 0 auto;
+}
+.footer-brand p {
+  font-size: 0.875rem; color: var(--mid); line-height: 1.7;
+  max-width: 280px; margin-top: 1rem;
+}
+.footer-col h4 {
+  font-family: var(--font-head); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: white;
+  margin-bottom: 1.25rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col ul li a {
+  font-size: 0.875rem; color: var(--mid);
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: white; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 1.5rem 3vw;
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1400px; margin: 0 auto;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+.footer-iso {
+  font-family: var(--font-head); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+}
+
+/* ── DETAIL DRAWER ─────────────────────────────────── */
+.drawer-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0); pointer-events: none;
+  transition: background 0.3s;
+}
+.drawer-overlay.on {
+  background: rgba(0,0,0,0.65); pointer-events: all;
+}
+.drawer {
+  position: fixed; top: 0; right: -520px; bottom: 0; z-index: 201;
+  width: min(520px, 100vw);
+  background: var(--dark2);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  display: flex; flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.22,1,0.36,1);
+  overflow: hidden;
+}
+.drawer.on { right: 0; }
+
+.drawer-head {
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.drawer-close {
+  background: none; border: none; color: var(--mid); font-size: 20px;
+  cursor: pointer; transition: color 0.15s; padding: 4px;
+}
+.drawer-close:hover { color: white; }
+.drawer-head-label {
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid);
+}
+
+.drawer-body { flex: 1; overflow-y: auto; padding: 2rem 1.75rem; }
+.drawer-body::-webkit-scrollbar { width: 4px; }
+.drawer-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+.drawer-book-cover {
+  width: 100%; max-width: 200px;
+  aspect-ratio: 3/4;
+  background: var(--dark);
+  display: flex; flex-direction: column;
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.drawer-book-cover .book-cover-inner {
+  padding: 1.25rem 1.1rem 1rem;
+}
+.drawer-book-cover .book-cover-title { font-size: 18px; }
+.drawer-book-cover .book-cover-cat-line { font-size: 9px; }
+
+.drawer-cat-badge {
+  display: inline-block; margin-bottom: 1rem;
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 3px;
+}
+.drawer-title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: 2rem; line-height: 1.05; text-transform: uppercase;
+  color: white; letter-spacing: 0.01em; margin-bottom: 0.25rem;
+}
+.drawer-sub {
+  font-family: var(--font-head); font-size: 14px; font-weight: 400;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mid); margin-bottom: 1.5rem;
+}
+.drawer-stamp-label {
+  font-family: var(--font-head); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+  margin-bottom: 0.4rem;
+}
+.drawer-stamp {
+  font-size: 0.875rem; line-height: 1.65; color: var(--mid);
+  padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 1.5rem;
+}
+.drawer-desc {
+  font-size: 0.9375rem; line-height: 1.8; color: var(--warm);
+  margin-bottom: 1.5rem;
+}
+.drawer-quote {
+  border-left: 3px solid var(--red);
+  padding: 0.75rem 1.25rem; margin-bottom: 1.5rem;
+  background: rgba(232,22,12,0.04);
+  border-radius: 0 2px 2px 0;
+}
+.drawer-quote p { font-style: italic; font-size: 0.9375rem; line-height: 1.7; color: var(--warm); }
+.drawer-quote cite {
+  display: block; margin-top: 0.5rem;
+  font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid);
+  font-style: normal;
+}
+.drawer-close-line {
+  font-style: italic; font-size: 1rem; color: white; line-height: 1.5;
+  margin-bottom: 2rem; font-weight: 700;
+}
+
+.drawer-foot {
+  padding: 1.25rem 1.75rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; gap: 1.25rem;
+  flex-shrink: 0;
+  background: var(--dark2);
+}
+.drawer-price {
+  font-family: var(--font-head); font-weight: 800; font-size: 1.75rem;
+  color: white;
+}
+.drawer-buy-btn {
+  flex: 1; font-weight: 700; font-size: 15px; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--red); color: white;
+  padding: 0.9rem 1.5rem; border-radius: var(--r);
+  border: none; cursor: pointer;
+  transition: background 0.2s;
+}
+.drawer-buy-btn:hover { background: #c91209; }
+.drawer-guarantee {
+  font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--mid);
+  text-align: center; margin-top: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+/* ── PURCHASE MODAL ────────────────────────────────── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,0); pointer-events: none;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s;
+}
+.modal-overlay.on { background: rgba(0,0,0,0.7); pointer-events: all; }
+.modal {
+  background: var(--dark2); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px; width: min(480px, calc(100vw - 2rem));
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+  transform: translateY(20px) scale(0.97);
+  opacity: 0; pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.25s;
+  overflow: hidden;
+}
+.modal-overlay.on .modal { transform: none; opacity: 1; pointer-events: all; }
+.modal-head {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-head-title {
+  font-family: var(--font-head); font-size: 14px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: white;
+}
+.modal-x {
+  background: none; border: none; color: var(--mid); font-size: 18px;
+  cursor: pointer; transition: color 0.15s;
+}
+.modal-x:hover { color: white; }
+.modal-body { padding: 1.75rem 1.5rem; }
+.modal-book-row {
+  display: flex; align-items: center; gap: 1rem;
+  padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.modal-book-mini-cover {
+  width: 60px; height: 80px;
+  background: var(--dark); border-radius: 2px; overflow: hidden;
+  display: flex; flex-direction: column; flex-shrink: 0;
+}
+.modal-book-mini-cover .book-cover-top-rule { height: 3px; }
+.modal-book-mini-cover .book-cover-inner { padding: 0.4rem 0.35rem; }
+.modal-book-mini-cover .book-cover-title { font-size: 8px; }
+.modal-book-title {
+  font-family: var(--font-head); font-weight: 700; font-size: 16px;
+  color: white; line-height: 1.2; margin-bottom: 3px;
+}
+.modal-book-cat {
+  font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid);
+  margin-bottom: 4px;
+}
+.modal-book-price {
+  font-family: var(--font-head); font-weight: 800; font-size: 20px; color: var(--red);
+}
+.pay-label {
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid);
+  margin-bottom: 0.75rem;
+}
+.apple-pay-btn {
+  width: 100%; height: 48px;
+  background: white; color: black;
+  border-radius: 4px; border: none;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px; font-weight: 500; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  gap: 4px; transition: opacity 0.2s;
+  margin-bottom: 1rem;
+}
+.apple-pay-btn:hover { opacity: 0.9; }
+.or-row {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 1rem 0;
+}
+.or-row::before, .or-row::after {
+  content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1);
+}
+.or-row span {
+  font-family: var(--font-head); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid);
+  white-space: nowrap;
+}
+.card-toggle-btn {
+  width: 100%; font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: none; color: var(--mid);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.65rem; border-radius: var(--r);
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: 0;
+}
+.card-toggle-btn:hover { color: white; border-color: rgba(255,255,255,0.3); }
+.card-form { display: none; padding-top: 1rem; }
+.card-form.show { display: flex; flex-direction: column; gap: 0.75rem; }
+.card-input {
+  width: 100%; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r); padding: 0.7rem 1rem;
+  color: white; font-family: var(--font-head); font-size: 14px;
+  outline: none; transition: border-color 0.2s;
+}
+.card-input:focus { border-color: rgba(255,255,255,0.35); }
+.card-input::placeholder { color: var(--mid); }
+.card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.pay-now-btn {
+  width: 100%; font-size: 15px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--red); color: white;
+  padding: 0.9rem; border-radius: var(--r);
+  border: none; cursor: pointer; margin-top: 0.25rem;
+  transition: background 0.2s;
+}
+.pay-now-btn:hover { background: #c91209; }
+.modal-guarantee {
+  text-align: center;
+  font-family: var(--font-head); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.07em; color: var(--mid); margin-top: 1.25rem;
+}
+
+/* ── SUCCESS OVERLAY ───────────────────────────────── */
+.success-overlay {
+  position: fixed; inset: 0; z-index: 400;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; opacity: 0;
+  transition: opacity 0.3s;
+}
+.success-overlay.on { opacity: 1; pointer-events: all; }
+.success-card {
+  background: var(--dark2); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px; width: min(440px, calc(100vw - 2rem));
+  padding: 2.5rem 2rem; text-align: center;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+}
+.success-check {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(61,153,112,0.15); border: 2px solid var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: var(--green); margin: 0 auto 1.5rem;
+}
+.success-h {
+  font-family: var(--font-head); font-weight: 800; font-size: 1.75rem;
+  text-transform: uppercase; color: white; margin-bottom: 0.5rem;
+}
+.success-sub { font-size: 0.875rem; color: var(--mid); margin-bottom: 1.75rem; }
+.success-msg {
+  font-style: italic; font-size: 0.9375rem; line-height: 1.75;
+  color: var(--warm); margin-bottom: 1.75rem;
+}
+.success-dl {
+  width: 100%; font-size: 14px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--red); color: white;
+  padding: 0.9rem; border-radius: var(--r); border: none;
+  cursor: pointer; margin-bottom: 0.75rem;
+  transition: background 0.2s;
+}
+.success-dl:hover { background: #c91209; }
+.success-cont {
+  width: 100%; font-size: 13px; font-weight: 600; letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: none; color: var(--mid);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.75rem; border-radius: var(--r); cursor: pointer;
+  transition: color 0.2s;
+}
+.success-cont:hover { color: white; }
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { border-left: none; border-top: 3px solid var(--red); }
+  .mission { grid-template-columns: 1fr; }
+  .mission-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .featured { grid-template-columns: 1fr; }
+  .featured-right { display: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .proof-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-search { display: none; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .books-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.875rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-seal">CX</div>
+    <span class="logo-name">CODEX<em>ISO</em></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#library">Library</a>
+    <a href="#mission">Mission</a>
+    <a href="#proof">Readers</a>
+  </nav>
+  <div class="nav-search">
+    <span class="nav-search-icon">⌕</span>
+    <input type="text" id="globalSearch" placeholder="Search 100 texts…" oninput="doSearch(this.value)">
+  </div>
+  <a href="#library" class="nav-btn">Browse Texts</a>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Index of Stolen Originals</div>
+    <h1 class="hero-h1">
+      <span class="thin">They</span><br>
+      sealed<br>
+      <span class="red">it.</span>
+    </h1>
+    <p class="hero-body">
+      Ancient scripture, forbidden gospels, and occult philosophy. Every text on Codexiso was hidden, banned, or buried by an institution that feared what it contained. Every one is yours for £1.99.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-red" onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})">Enter the Library</button>
+      <a href="#mission" class="btn-ghost">Our Mission</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div>
+      <div class="hero-principles-label">The Codexiso Principles</div>
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <div class="principle-text">
+          <strong>Knowledge cannot be owned</strong>
+          <p>Every text on this platform is in the public domain. We curate, format, and protect access. Nothing more.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <div class="principle-text">
+          <strong>Suppression is a confession</strong>
+          <p>When institutions hide a text, they reveal their fear of it. That fear is our curation guide.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <div class="principle-text">
+          <strong>The price of truth should never be prohibitive</strong>
+          <p>£1.99. Every text. No subscription. No upsell. Always.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n">100<sup>+</sup></div>
+        <div class="stat-l">Texts available</div>
+      </div>
+      <div>
+        <div class="stat-n">£1.99</div>
+        <div class="stat-l">Per text, always</div>
+      </div>
+      <div>
+        <div class="stat-n">14<sup>k</sup></div>
+        <div class="stat-l">Readers worldwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TICKER ─────────────────────────────────────────── -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- ── LIBRARY ────────────────────────────────────────── -->
+<section class="library" id="library">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">The Archive</div>
+      <h2 class="section-title">Forbidden Texts</h2>
+    </div>
+    <div class="section-count" id="bookCount">100 texts</div>
+  </div>
+  <div class="filter-bar" id="filterBar"></div>
+  <div class="books-grid" id="booksGrid"></div>
+</section>
+
+<!-- ── MISSION ───────────────────────────────────────── -->
+<section class="mission" id="mission">
+  <div class="mission-left">
+    <div class="section-eyebrow">Why Codexiso</div>
+    <h2 class="mission-h">Built to<br>Protect<br>Access</h2>
+    <div class="mission-quote">
+      <p>Whoever controls the information controls the narrative. Whoever controls the narrative controls what people believe is possible. Codexiso exists to break that control.</p>
+    </div>
+  </div>
+  <div class="mission-right">
+    <div class="mission-point">
+      <div class="mp-num">01</div>
+      <div>
+        <div class="mp-title">Public Domain. Always.</div>
+        <p class="mp-body">Every text on Codexiso is legally in the public domain. No one owns these words. We format them properly and make them findable.</p>
+      </div>
+    </div>
+    <div class="mission-point">
+      <div class="mp-num">02</div>
+      <div>
+        <div class="mp-title">£1.99. No Subscription.</div>
+        <p class="mp-body">One price. No upsells. No membership tiers. The barrier to ancient wisdom should be curiosity, not a credit card.</p>
+      </div>
+    </div>
+    <div class="mission-point">
+      <div class="mp-num">03</div>
+      <div>
+        <div class="mp-title">Curated by Suppression</div>
+        <p class="mp-body">Our selection criteria is simple: was this text feared? Was it banned, burned, buried, or excluded? Then it belongs here.</p>
+      </div>
+    </div>
+    <div class="mission-point">
+      <div class="mp-num">04</div>
+      <div>
+        <div class="mp-title">Instant. Yours Forever.</div>
+        <p class="mp-body">No DRM. No expiry. No cloud dependency. A text you paid for is a text you own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED ──────────────────────────────────────── -->
+<section class="featured" id="featured">
+  <div class="featured-left">
+    <div class="featured-eyebrow">Text of the Month</div>
+    <h2 class="featured-title">The Book<br>of Enoch</h2>
+    <p class="featured-body">Written by the great-grandfather of Noah. Excluded from the Biblical canon at the Council of Laodicea, 364 AD. The Watchers. The Nephilim. The cosmology the early Church deemed too dangerous to survive.</p>
+    <div class="featured-meta">
+      <div class="fm-item"><strong>Origin</strong><span>3rd Century BC</span></div>
+      <div class="fm-item"><strong>Suppressed</strong><span>364 AD</span></div>
+      <div class="fm-item"><strong>Status</strong><span>Public Domain</span></div>
+    </div>
+    <div class="featured-cta">
+      <span class="featured-price">£1.99</span>
+      <button class="btn-white" onclick="openModal({id:'book-of-enoch',title:'The Book of Enoch',sub:'Complete Edition',tag:'apocrypha',cat:'Lost Scripture',stamp:'Excluded from the Biblical canon at the Council of Laodicea, 364 AD.',close:'Moses received two accounts on Sinai. You were only given one.',desc:'The Book of Enoch describes the fall of the Watchers — the sons of God who descended to earth, took human wives, and begat the Nephilim giants. It contains the cosmology of seven heavens, the names of the archangels, and a detailed account of the angelic judgment that was excluded from the Bible at the Council of Laodicea in 364 AD.',quote:'And the angels, the children of the heaven, saw and lusted after them, and said to one another: Come, let us choose us wives from among the children of men.'})">Unlock This Text</button>
+    </div>
+  </div>
+  <div class="featured-right">
+    <div class="featured-book-mock">
+      <div class="book-cover-top-rule" style="background:var(--red)"></div>
+      <div class="featured-book-mock-inner">
+        <div class="featured-book-mock-cat">Lost Scripture</div>
+        <div class="featured-book-mock-title">The Book of Enoch</div>
+        <div class="featured-book-mock-sub">Complete Edition</div>
+      </div>
+      <div class="featured-book-mock-foot">Codexiso · Index of Suppressed Origins</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROOF ─────────────────────────────────────────── -->
+<section class="proof" id="proof">
+  <div class="section-eyebrow">Readers</div>
+  <h2 class="section-title">From the Community</h2>
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <p class="proof-text">Spent years hunting for the Nag Hammadi Codices in a readable format. Found the entire library here for less than a coffee. The formatting is exceptional.</p>
+      <span class="proof-author">M. Hargreaves — Oxford</span>
+    </div>
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <p class="proof-text">The fact that this costs £1.99 is almost offensive to me. These texts shaped civilisation. The Kybalion alone changed how I see everything.</p>
+      <span class="proof-author">D. Okafor — Lagos</span>
+    </div>
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <p class="proof-text">Downloaded seven texts in an hour. No friction, no nonsense. Every suppression note in the descriptions sends you deeper. Exactly what this needed to be.</p>
+      <span class="proof-author">R. Castellano — Barcelona</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-seal">CX</div>
+        <span class="logo-name">CODEX<em>ISO</em></span>
+      </a>
+      <p>Forbidden texts, suppressed scripture, and ancient wisdom. Formatted properly. Priced fairly. Yours forever.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Library</h4>
+      <ul>
+        <li><a href="#">Gnostic Gospels</a></li>
+        <li><a href="#">Lost Scripture</a></li>
+        <li><a href="#">Hermetic Arts</a></li>
+        <li><a href="#">Mystery Schools</a></li>
+        <li><a href="#">Ancient Wisdom</a></li>
+        <li><a href="#">Jewish Mysticism</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Public Domain FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Codexiso · All texts are public domain · Formatted and curated by Codexiso</p>
+    <span class="footer-iso">Index of Stolen Originals</span>
+  </div>
+</footer>
+
+<!-- ── DETAIL DRAWER ──────────────────────────────────── -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="handleDrawerClick(event)">
+</div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <span class="drawer-head-label">Text Detail</span>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot">
+    <div class="drawer-price">£1.99</div>
+    <button class="drawer-buy-btn" id="drawerBuyBtn">Unlock This Text</button>
+  </div>
+</div>
+
+<!-- ── PURCHASE MODAL ─────────────────────────────────── -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleModalClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <span class="modal-head-title">Complete Purchase</span>
+      <button class="modal-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-book-row">
+        <div class="modal-book-mini-cover" id="mMiniCover">
+          <div class="book-cover-top-rule" id="mMiniRule"></div>
+          <div class="book-cover-inner">
+            <div class="book-cover-cat-line" id="mMiniCat"></div>
+            <div class="book-cover-title" id="mMiniTitle"></div>
+          </div>
+        </div>
+        <div>
+          <div class="modal-book-title" id="mTitle">—</div>
+          <div class="modal-book-cat" id="mCat">—</div>
+          <div class="modal-book-price">£1.99</div>
+        </div>
+      </div>
+      <p class="pay-label">Payment Method</p>
+      <button class="apple-pay-btn" onclick="pay('Apple Pay')"> Pay</button>
+      <div class="or-row"><span>or pay with card</span></div>
+      <button class="card-toggle-btn" id="cardToggle" onclick="toggleCard()">Enter Card Details</button>
+      <div class="card-form" id="cardForm">
+        <input type="text" class="card-input" placeholder="Card number" maxlength="19" oninput="fmtCard(this)">
+        <input type="text" class="card-input" placeholder="Name on card">
+        <div class="card-row">
+          <input type="text" class="card-input" placeholder="MM / YY" maxlength="7">
+          <input type="text" class="card-input" placeholder="CVV" maxlength="3">
+        </div>
+        <button class="pay-now-btn" onclick="pay('card')">Pay £1.99 Now</button>
+      </div>
+      <div class="modal-guarantee">🔒 &nbsp;Secure · Instant PDF · No subscription</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SUCCESS ────────────────────────────────────────── -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-check">✓</div>
+    <h3 class="success-h">Access Granted</h3>
+    <p class="success-sub">Payment confirmed · Instant download ready</p>
+    <p class="success-msg" id="successMsg">Your text is ready.</p>
+    <button class="success-dl" onclick="closeSuccess()">⬇ &nbsp;Download Your PDF</button>
+    <button class="success-cont" onclick="closeSuccess()">Continue Browsing the Library</button>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   BOOK DATA — all 100 texts
+═══════════════════════════════════════════════════════ */
+</script>
+<script id="bookDataScript">
+const BOOKS = [{"id": "gospel-of-thomas", "title": "The Gospel of Thomas", "sub": "Complete Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Excluded from the Biblical canon; buried in Egypt circa 400 AD. Rediscovered at Nag Hammadi in 1945 after 1,500 years of concealment.", "desc": "The Gospel of Thomas contains no miracles, no crucifixion, no resurrection narrative. It is 114 secret sayings attributed to Jesus, written down by his twin. Discovered in 1945 in a sealed jar near Nag Hammadi, Egypt, it had been buried since the late 4th century — the same era in which the Church finalised the Biblical canon and ordered all competing texts destroyed.", "close": "They buried it in the desert rather than let you read it. Here it is.", "quote": "“Whoever finds the interpretation of these sayings will not experience death.”"}, {"id": "gospel-of-philip", "title": "The Gospel of Philip", "sub": "Nag Hammadi Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Buried at Nag Hammadi circa 390 AD following the canonisation edicts of Theophilus of Alexandria. Lost for 1,550 years.", "desc": "The Gospel of Philip is a Valentinian Gnostic text from the 2nd or 3rd century — a collection of reflections, sayings, and theological meditations on the sacraments of the early Gnostic church. It describes five sacred rites: baptism, chrism, eucharist, redemption, and the bridal chamber. That last sacrament — a ritual of spiritual union — is why the Church found it intolerable.", "close": "Fifteen centuries of silence, ended by a jar of sand.", "quote": "“The companion of the Saviour is Mary Magdalene. Christ loved her more than all the disciples and used to kiss her often.”"}, {"id": "gospel-of-mary", "title": "The Gospel of Mary Magdalene", "sub": "Complete Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Written 2nd century AD. Suppressed as the early Church consolidated male-only apostolic authority. Lost entirely for 1,500 years.", "desc": "The Gospel of Mary Magdalene poses a question the early Church could not answer and so chose to bury: what if the primary recipient of Christ’s resurrection teaching was a woman? The text presents Mary as the apostle to the apostles — the one Jesus trusted with the secret of how the soul passes through the seven powers of darkness after death. Peter, in the text, refuses to believe her. Andrew cal", "close": "She was the first witness to the resurrection. They erased her gospel.", "quote": "“Do not weep and be distressed nor let your hearts be irresolute, for His grace will be entirely with you and will protect you.”"}, {"id": "gospel-of-truth", "title": "The Gospel of Truth", "sub": "Valentinian Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Attributed to Valentinus, condemned as heresy circa 180 AD by Irenaeus of Lyon. Ordered destroyed at the Council of Nicaea.", "desc": "The Gospel of Truth is one of the most beautiful texts in the Nag Hammadi library — a lyrical, meditative homily attributed to Valentinus, the most influential Gnostic teacher of the 2nd century. Valentinus was, for a time, a candidate for Bishop of Rome. He lost. His texts were declared heretical. Irenaeus of Lyon devoted five books to refuting him.", "close": "The fog has lifted. The text they called heresy is here.", "quote": "“Ignorance of the Father brought about anguish and terror. And the anguish grew solid like a fog, so that no one was able to see.”"}, {"id": "apocryphon-of-john", "title": "The Secret Book of John", "sub": "The Apocryphon of John", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Cited and condemned by Irenaeus of Lyon circa 180 AD. Outlawed under Theodosius I, 380 AD. Buried in Egypt, recovered 1945.", "desc": "The Apocryphon of John is the foundational cosmological text of Sethian Gnosticism — a complete alternative account of creation, the fall, and redemption that predates and directly challenges Genesis. In this account, the God of the Old Testament is not the supreme deity but a lesser being, an arrogant demiurge named Yaldabaoth who mistakenly believes he created the universe alone. The true God re", "close": "Four copies survived the purge. This is one of them.", "quote": "“I am the Father. I am the Mother. I am the Son. I am the undefiled and incorruptible one.”"}, {"id": "thunder-perfect-mind", "title": "Thunder, Perfect Mind", "sub": "Complete Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Written 2nd–4th century. Suppressed with the Nag Hammadi library circa 390 AD. Unique in the ancient world — a goddess speaking in her own voice.", "desc": "Thunder, Perfect Mind is unlike any other text in the ancient world. It is a poem — a series of paradoxical proclamations spoken by a feminine divine voice who declares herself simultaneously virgin and mother, wife and daughter, bride and bridegroom, barren and fertile, the ignorant and the wise. She is the first and the last. She is the whore and the holy one. Nothing can contain her in a single", "close": "She was not lost. She was buried. She is speaking again.", "quote": "“I am the first and the last. I am the honoured one and the scorned one. I am the whore and the holy one. I am the wife and the virgin.”"}, {"id": "hypostasis-of-archons", "title": "The Hypostasis of the Archons", "sub": "The Reality of the Rulers", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Condemned as heresy circa 180 AD. Outlawed 380 AD under Theodosius. Buried at Nag Hammadi, recovered 1945.", "desc": "The Hypostasis of the Archons — literally, the Reality of the Rulers — retells Genesis from the perspective of humanity’s enslavement. The Archons are blind cosmic rulers who created the material world in ignorance and who seek to keep human souls trapped within it. The serpent in the Garden is not Satan but an agent of true wisdom. Eve is not the source of the fall but the bearer of divine light.", "close": "The Rulers said there was no truth above them. They were wrong.", "quote": "“Their chief is blind; because of his power and his ignorance and his arrogance he said — with his power — ‘It is I who am God; there is none other apart from me.’”"}, {"id": "origin-of-world", "title": "On the Origin of the World", "sub": "Gnostic Cosmology", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Written 3rd–4th century. Part of the Nag Hammadi collection, buried 390 AD, recovered 1945. A complete alternative cosmology.", "desc": "On the Origin of the World is the most ambitious cosmological text in the Nag Hammadi library. It does not merely retell Genesis — it constructs an entire alternative universe, from the first stirring of darkness before creation through to the final apocalypse. It incorporates Egyptian, Greek, Jewish, and Christian traditions into a single sweeping mythology that refuses every orthodoxy.", "close": "They could not refute it. So they buried it.", "quote": "“Before chaos came into being, darkness existed, and after it shadow, and after shadow primary matter, and matter was within chaos.”"}, {"id": "dialogue-of-savior", "title": "The Dialogue of the Savior", "sub": "Nag Hammadi Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Written mid-2nd century. Contains teachings of Jesus absent from all canonical gospels. Buried circa 390 AD, recovered at Nag Hammadi 1945.", "desc": "The Dialogue of the Savior presents Jesus in private conversation with three disciples — Matthew, Judas (not Iscariot), and Mary Magdalene. The conversation ranges across questions of creation, death, the nature of light, and how the soul escapes the material world. Mary Magdalene speaks as an equal, and her understanding exceeds the male disciples. At one point, the text says she spoke as a woman", "close": "Parts of this were deliberately destroyed before it was buried. What remains is still extraordinary.", "quote": "“Pray in the place where there is no woman. Destroy the works of womanhood.”"}, {"id": "sophia-of-jesus", "title": "The Sophia of Jesus Christ", "sub": "Complete Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Written 1st–2nd century AD. A post-resurrection dialogue between Jesus and his disciples containing cosmological secrets absent from canonical scripture.", "desc": "The Sophia of Jesus Christ is set after the resurrection, when Jesus appears on a mountain in Galilee to his twelve disciples and seven women. He has been glorified, transformed beyond his earthly form. And he begins to teach the things he could not teach during his earthly ministry — the true structure of the heavens, the nature of the Immortal Man, the fall of Sophia, the twelve aeons that gover", "close": "The resurrection was not the end. It was the beginning of the real teaching.", "quote": "“The Son of Man consented with Sophia, his consort, and revealed a great androgynous light. His masculine name is designated ‘Saviour, Begetter of All Things.’ His feminine name is designated ‘All-Begettress Sophia.’”"}, {"id": "apocalypse-of-peter", "title": "The Gnostic Apocalypse of Peter", "sub": "Nag Hammadi Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Written 2nd–3rd century. Contains an account of the crucifixion directly contradicting the canonical gospels. Condemned and buried circa 390 AD.", "desc": "The Gnostic Apocalypse of Peter contains one of the most incendiary passages in all suppressed scripture: a description of the crucifixion in which Jesus laughs. In Peter’s vision, a joyful Jesus stands beside the cross while the physical body is nailed to it. The one who is crucified, Jesus explains, is only the substitute — the material shell. The living Christ cannot be killed.", "close": "The Church built on Peter burned the gospel that bore his name.", "quote": "“He whom you saw on the tree, glad and laughing, this is the living Jesus. But this one into whose hands and feet they drive the nails is his fleshly part.”"}, {"id": "gospel-of-egyptians", "title": "The Gospel of the Egyptians", "sub": "The Holy Book of the Great Invisible Spirit", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "Written 2nd–3rd century. Self-described as a holy book hidden for the elect. Buried at Nag Hammadi circa 390 AD.", "desc": "The Gospel of the Egyptians — also called the Holy Book of the Great Invisible Spirit — is the central sacred text of Sethian Gnosticism. Seth, the third son of Adam, is here not a minor biblical figure but a cosmic saviour, a heavenly being who descends through the ages in different forms — as the earthly Seth, as Jesus, as the Great Light — to rescue the spiritual seed of humanity from the Archo", "close": "A complete religion was destroyed. This is all that remains.", "quote": "“Great is the first aeon, male virgin Barbelo, the first glory of the invisible Father, she who is called perfect.”"}, {"id": "allogenes", "title": "Allogenes the Stranger", "sub": "Nag Hammadi Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "3rd century Sethian Gnostic text. Mentioned by name and condemned by Porphyry’s teacher Plotinus, who ordered it refuted. Buried at Nag Hammadi circa 390 AD.", "desc": "Allogenes — Greek for “the Stranger” or “the one of another race” — is a Sethian Gnostic revelation text in which a sage receives visions of the heavenly world and ascends through multiple levels of divine reality. It is among the most philosophically sophisticated texts in the Nag Hammadi library, engaging directly with Neoplatonic philosophy in ways that suggest the Gnostics and the Neoplatonist", "close": "Plotinus spent years refuting it. Now you can read it yourself.", "quote": "“I was very disturbed, and I turned to myself. Having seen the light that surrounded me and the good that was in me, I became divine.”"}, {"id": "trimorphic-protennoia", "title": "Trimorphic Protennoia", "sub": "Three Forms of the First Thought", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "3rd century Gnostic text. Predates and possibly influenced the Gospel of John’s Logos doctrine. Buried 390 AD, recovered 1945.", "desc": "Trimorphic Protennoia — Three Forms of the First Thought — is a revelation monologue spoken by a feminine divine being who descends three times into the world: as Voice, as Speech, and as Word (Logos). In the third descent, she enters the body of Jesus and reveals the hidden knowledge of the Pleroma. Scholars have noted the remarkable parallels with the Prologue of John: “In the beginning was the ", "close": "The Gospel of John may be its echo. This is the original.", "quote": "“I am the Voice that appeared through my Thought. I am the one who is called by three names, although I dwell alone.”"}, {"id": "paraphrase-of-shem", "title": "The Paraphrase of Shem", "sub": "Nag Hammadi Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "3rd century Gnostic text, possibly predating Christianity. Condemned by Hippolytus of Rome. Buried 390 AD, recovered 1945.", "desc": "The Paraphrase of Shem is one of the strangest and most ancient-feeling texts in the Nag Hammadi library. Shem, son of Noah, receives a cosmic vision in which he is shown the true origin of the universe: three primal principles — Light, Darkness, and Spirit — whose interaction produces all of creation. The text may predate Christianity entirely, representing a Gnostic tradition that was later abso", "close": "The oldest vision in the Nag Hammadi library. Here, unedited.", "quote": "“I am Shem, the son of Noah. My mind had been dwelling in my body as I sought to know the heaviness of Darkness.”"}, {"id": "didache", "title": "The Didache", "sub": "Teaching of the Twelve Apostles", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "Written circa 50–120 AD, possibly the earliest Christian manual in existence. Known only by name for 1,500 years. Rediscovered in Constantinople in 1873.", "desc": "The Didache — Greek for “teaching” — is almost certainly the oldest surviving Christian text outside the New Testament. Written between 50 and 120 AD, it was read alongside scripture in many early churches and was seriously considered for inclusion in the canon. Then it vanished. For fifteen centuries, Christians knew the Didache only by name, quoted in lists of disputed texts.", "close": "The earliest Christian manual. Hidden for fifteen centuries in a monastery cupboard.", "quote": "“You shall not murder, you shall not commit adultery, you shall not corrupt boys, you shall not fornicate, you shall not steal, you shall not practise magic.”"}, {"id": "epistle-of-barnabas", "title": "The Epistle of Barnabas", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "Written circa 70–130 AD. Included in the Codex Sinaiticus as canonical scripture. Removed from the Bible by the Council of Laodicea, 364 AD.", "desc": "The Epistle of Barnabas is not an epistle and was not written by Barnabas. It is an anonymous 2nd-century theological treatise that was so highly regarded in early Christianity that it was included as canonical scripture in the Codex Sinaiticus — one of the oldest and most authoritative manuscripts of the Bible in existence. Then it was cut.", "close": "It was in your Bible. They took it out.", "quote": "“The covenant was given to us; but they lost it forever in this way, when Moses had just received it.”"}, {"id": "odes-of-solomon", "title": "The Odes of Solomon", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Possibly the earliest Christian hymnal, written 1st–2nd century AD. Not included in any Biblical canon. Entirely lost to scholarship until 1909.", "desc": "The Odes of Solomon are 42 ecstatic, mystical hymns of extraordinary beauty, possibly the oldest surviving Christian poetry. They describe a Christianity of milk and honey and living water, of the Spirit as a feminine dove, of mystical union with the divine that has more in common with Sufi poetry than with institutional doctrine. The Holy Spirit is referred to in the feminine throughout. Salvatio", "close": "The earliest Christian hymns. Not in your hymnal. Here.", "quote": "“As the sun is joy to them that seek his daybreak, so is my joy the Lord; because He is my Sun, and His rays have lifted me up, and His light hath dispelled all darkness from my face.”"}, {"id": "acts-of-paul-and-thecla", "title": "The Acts of Paul and Thecla", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "Written circa 160 AD. Widely read for centuries. Condemned by Tertullian as a forgery used to justify women baptising and preaching. Suppressed 4th century.", "desc": "The Acts of Paul and Thecla tells the story of Thecla, a young woman from Iconium who hears Paul preach on virginity and chastity, abandons her fiancé, and follows Paul on mission. She is condemned to death twice — once by fire, once by wild beasts in the arena — and both times is miraculously saved. At the end of the story, she baptises herself in a pool of water and goes on to preach independent", "close": "Women used this text to claim the right to preach. So it was suppressed.", "quote": "“Blessed are they who have kept the flesh pure, for they shall become a temple of God.”"}, {"id": "gospel-of-bartholomew", "title": "The Gospel of Bartholomew", "sub": "Questions of Bartholomew", "tag": "mystery", "cat": "Mystery Schools", "stamp": "4th–5th century. Condemned by the Decretum Gelasianum as apocryphal. Contains conversations with the Devil and descriptions of hell absent from canonical scripture.", "desc": "The Gospel of Bartholomew contains one of the most extraordinary scenes in all apocryphal literature: the apostles, after the resurrection, ask Jesus to show them where he went during the three days between the cross and the empty tomb. He shows them — hell, Hades, the underworld. And then Mary is asked to describe the moment of the Incarnation: how the Word entered her body. Her account is so ove", "close": "Satan testified before the apostles. The Church decided you shouldn’t hear it.", "quote": "“And Bartholomew saith unto him: Tell us, thou that art concealed in the abyss of hell, what is the darkness, and what the dwelling-place of thy habitation?”"}, {"id": "apocalypse-of-paul", "title": "The Apocalypse of Paul", "sub": "The Vision of Heaven and Hell", "tag": "mystery", "cat": "Mystery Schools", "stamp": "4th century. Condemned by Augustine and Jerome as the most mischievous of the apocryphal texts. Ordered destroyed 405 AD by imperial edict. Widely read anyway.", "desc": "The Apocalypse of Paul claims to record what Paul saw when he was “caught up to the third heaven” (2 Corinthians 12:2) — a vision he refused to describe in his letters. The text fills in the silence with extraordinary detail: heavenly geography, the weighing of souls, tours of paradise and hell, conversations with angels, the torment of various categories of sinners described with disturbing speci", "close": "An emperor ordered it destroyed. Ordinary readers kept copying it anyway.", "quote": "“And I saw there an old man, and his face was like the sun, and his garments were white, and his throne was white as snow.”"}, {"id": "infancy-gospel-of-thomas", "title": "The Infancy Gospel of Thomas", "sub": "The Childhood of Jesus", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Written circa 150–200 AD. Condemned by the Decretum Gelasianum. Shows a Jesus who is terrifying, wilful, and divine before he is good — a portrait the Church could not accept.", "desc": "The Infancy Gospel of Thomas presents the child Jesus as a being of terrifying divine power who has not yet learned restraint. When a boy accidentally bumps into him, Jesus curses him and he dies. When a teacher tries to educate him, Jesus humiliates him before the whole synagogue. When another child breaks his water jar, Jesus miraculously fills his cloak with water instead — but when a child des", "close": "The canonical Gospels skip from the manger to the Jordan. This is what they omitted.", "quote": "“When Jesus was five years old he was playing at the crossing of a stream, and he gathered together the waters that flowed there into pools, and made them immediately pure.”"}, {"id": "protoevangelium-of-james", "title": "The Protoevangelium of James", "sub": "The Birth of Mary", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Written circa 145–200 AD. Source of most Catholic doctrine about Mary (perpetual virginity, Immaculate Conception). Condemned by Pope Gelasius 495 AD.", "desc": "Here is the paradox at the heart of the Protoevangelium: the Catholic Church condemned this text as apocryphal while simultaneously basing some of its most important Marian doctrines on it. The perpetual virginity of Mary — that she remained a virgin after giving birth to Jesus — rests almost entirely on this text, which includes the famous scene of a midwife physically examining Mary after the de", "close": "The Church condemned this book while teaching everything it says.", "quote": "“And behold, an angel of the Lord stood by her, and said, Anne, Anne, the Lord hath heard thy prayer, and thou shalt conceive, and shall bring forth; and thy seed shall be spoken of in all the world.”"}, {"id": "gospel-of-nicodemus", "title": "The Gospel of Nicodemus", "sub": "Acts of Pilate", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "4th–5th century. Contains the official Roman trial record of Jesus and a detailed account of the Harrowing of Hell — both absent from canonical scripture.", "desc": "The Gospel of Nicodemus purports to be the official Roman court record of the trial of Jesus, supplemented by the testimonies of witnesses and a dramatic account of what happened when Christ descended into hell between the crucifixion and the resurrection. The Harrowing of Hell — Jesus smashing open the gates of Hades and freeing the souls of Adam, Eve, Abraham, Moses, and all the righteous dead —", "close": "The Harrowing of Hell: the most dramatic event in Christianity that never made the Bible.", "quote": "“O prince, iron gates, open for the King of glory to come in! And at these words the brazen gates were broken in pieces, and the iron bars were crushed.”"}, {"id": "book-of-jubilees", "title": "The Book of Jubilees", "sub": "The Little Genesis", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "Written 2nd century BC. Canonical in Ethiopian Orthodox Church. Excluded from the Western Bible. Multiple copies found in the Dead Sea Scrolls.", "desc": "The Book of Jubilees is a retelling of Genesis and the first part of Exodus, written as if dictated by an angel to Moses on Mount Sinai. It fills in the gaps of the Biblical narrative with extraordinary specificity: the names of the wives of the patriarchs, the precise dates of every event calculated according to a 364-day solar calendar, the pre-history of the fallen angels, and a detailed code o", "close": "Moses received two accounts on Sinai. You were only given one.", "quote": "“There will be those who will seek to make the day of turbulence an occasion of rest, and they will call the evil good, and the good evil.”"}, {"id": "book-of-jasher", "title": "The Book of Jasher", "sub": "The Upright Record", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Cited twice in the Hebrew Bible (Joshua 10:13, 2 Samuel 1:18) but excluded from the canon. Lost and refound multiple times over three millennia.", "desc": "The Book of Jasher is cited by name in the Hebrew Bible itself — twice, in Joshua and 2 Samuel — yet it was never included in the canon. This means the compilers of the Old Testament were aware of a book they considered authoritative enough to quote but chose not to include. The reasons have never been satisfactorily explained.", "close": "The Bible quotes it. The Bible excludes it. Draw your own conclusions.", "quote": "“And the sons of men in those days took from the cattle of the earth, the beasts of the field and the fowls of the air, and taught the mixture of animals of one species with the other.”"}, {"id": "testament-of-solomon", "title": "The Testament of Solomon", "sub": "The King’s Book of Demons", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "Written 1st–5th century AD. Condemned repeatedly as diabolical. The source of Western ceremonial magic’s entire system of demonic classification and binding.", "desc": "The Testament of Solomon claims to record how King Solomon built the Temple in Jerusalem: not with human labour alone, but by summoning and binding seventy-two demons, compelling each one to work on the Temple and reveal the angel whose name could bind them. One by one, the demons appear before Solomon’s ring, confess their nature, describe the diseases and calamities they cause, and are put to wo", "close": "Solomon built the Temple with demonic labour. This is his record of how.", "quote": "“I Solomon glorified the Lord God, and then I asked of the demon: Who art thou, and what is thy name? And he said: I am called Ornias.”"}, {"id": "assumption-of-moses", "title": "The Assumption of Moses", "sub": "Testament of Moses", "tag": "mystery", "cat": "Mystery Schools", "stamp": "1st century BC–1st century AD. Quoted in the Epistle of Jude (v. 9). Excluded from the Biblical canon despite being cited in scripture.", "desc": "Like the Book of Enoch, the Assumption of Moses has the peculiar distinction of being quoted in canonical scripture — the Epistle of Jude references the archangel Michael disputing with the Devil over the body of Moses, an event found nowhere in the Old Testament but central to this text — yet it was never included in the Bible itself. The author of Jude clearly regarded it as authoritative. The c", "close": "The New Testament quotes it. The Bible excludes it. Again.", "quote": "“For God hath prepared me to be the mediator of His covenant, and likewise of the revelation of His purposes.”"}, {"id": "ascension-of-isaiah", "title": "The Ascension of Isaiah", "sub": "Vision & Martyrdom", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "2nd century BC–2nd century AD. Read as canonical in some early churches. Contains an account of Christ’s descent through the seven heavens unlike anything in the Bible.", "desc": "The Ascension of Isaiah is a composite text in two parts: a Jewish martyrdom account in which the prophet Isaiah is sawn in two on the orders of King Manasseh, and a Christian vision in which Isaiah ascends through the seven heavens and witnesses the entire life of Jesus before it happens — the descent, the incarnation, the crucifixion, and the resurrection — as a cosmic drama played out in the he", "close": "Isaiah saw the entire life of Christ before it happened. The Church decided you shouldn’t know.", "quote": "“And I saw One standing whose glory surpassed that of all, and His glory was great and wonderful, and after I had looked at Him, all the righteous whom I had seen and also the angels whom I had seen came to Him.”"}, {"id": "apocalypse-of-abraham", "title": "The Apocalypse of Abraham", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "1st–2nd century AD. Survives only in Old Slavonic translation. Never included in Western canon despite being known to early Church fathers.", "desc": "The Apocalypse of Abraham opens with a remarkable scene: the young Abraham in his father Terah’s workshop, surrounded by idols. Systematically, methodically, he tests each idol and finds it hollow, carved, impotent. He destroys them. Then God speaks to him, and what follows is one of the most intense mystical journeys in all apocalyptic literature: Abraham ascends through the heavens on the wings ", "close": "Abraham’s journey to the throne of God. Lost in the West. Here recovered.", "quote": "“And I heard a voice like the roaring of the sea, and it said: Blessed art thou, Abraham, friend of God, who hath loved thee.”"}, {"id": "testament-of-twelve-patriarchs", "title": "The Testaments of the Twelve Patriarchs", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "2nd century BC. Deathbed testaments of Jacob’s twelve sons containing ethical teachings, prophecies, and heavenly visions absent from Genesis. Excluded from all canons.", "desc": "On their deathbeds, the twelve sons of Jacob — Reuben, Simeon, Levi, Judah, Issachar, Zebulun, Dan, Naphtali, Gad, Asher, Joseph, Benjamin — gather their children and speak their final words: confessions of their sins, ethical instructions for their descendants, prophecies about the coming of the Messiah, and visions of the heavens and hells they have been shown. Genesis gives none of this. This t", "close": "The patriarchs’ last words. Genesis stayed silent. This text did not.", "quote": "“Love ye one another from the heart; and if a man sin against thee, speak peaceably to him, and in thy soul hold not guile.”"}, {"id": "2-baruch", "title": "The Syriac Apocalypse of Baruch", "sub": "2 Baruch — Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Written circa 70–100 AD after the destruction of Jerusalem. A response to catastrophe that the rabbis found too apocalyptic to canonise.", "desc": "2 Baruch is a response to one of the most traumatic events in Jewish history: the destruction of the Temple by the Romans in 70 AD. Baruch, the secretary of the prophet Jeremiah, is left behind while the rest of the community is taken into exile. He sits by the ruins of Jerusalem and weeps. Then God speaks to him, and what follows is a remarkable meditation on suffering, divine justice, and the ho", "close": "Written in the rubble of Jerusalem. Excluded from scripture. Here.", "quote": "“For it is not for the sake of the righteous merely that the world was created, but also for the sake of those who, although not righteous, live in it.”"}, {"id": "4-ezra", "title": "4 Ezra: The Apocalypse of Ezra", "sub": "2 Esdras — Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Written circa 100 AD. Included in the Latin Vulgate as 2 Esdras. Removed from the Catholic Bible at the Council of Trent, 1546.", "desc": "4 Ezra is a philosophical and apocalyptic masterpiece, the wrestling of a Jewish sage with the question of divine justice in the aftermath of Rome’s destruction of Jerusalem. Ezra argues with an angel over seven visions, demanding to understand why the righteous suffer, why God permits evil, why Israel has been abandoned. The angel’s answers are not satisfying. Ezra keeps arguing. This is a text t", "close": "In your Bible for a thousand years. Removed 1546. Here restored.", "quote": "“For the world hath lost its youth, and the times begin to wax old. For the pitcher is ever nearer to the cistern of doom.”"}, {"id": "pistis-sophia", "title": "Pistis Sophia", "sub": "Faith Wisdom — Complete Edition", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "3rd–4th century. The longest Gnostic text surviving in Coptic. Presents Jesus’ post-resurrection teachings over eleven years — the hidden curriculum the canonical Gospels omit.", "desc": "Pistis Sophia — Faith-Wisdom — records eleven years of post-resurrection teaching given by Jesus to his disciples. In the canonical Gospels, the risen Christ appears for forty days before ascending. Pistis Sophia covers what happened in the years that followed: a sustained, extraordinary curriculum of Gnostic theology delivered to the inner circle, with Mary Magdalene asking the majority of the qu", "close": "Eleven years of teaching the Gospels omit. Here they are.", "quote": "“Mary Magdalene answered and said: My Lord, my Light, I understand in my mind that I will expound this word.”"}, {"id": "corpus-hermeticum", "title": "The Corpus Hermeticum", "sub": "The Hermetic Writings of Trismegistus", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "Written 1st–3rd century AD. Preserved by Islamic scholars when Europe burned its libraries. Suppressed by the Church as pagan magic. Rediscovered in Florence, 1460.", "desc": "The Corpus Hermeticum is the foundational text of the Western esoteric tradition. Attributed to Hermes Trismegistus — Thrice-Greatest Hermes, identified with the Egyptian god Thoth — it presents a series of dialogues about the nature of God, the mind, and the cosmos that were believed in the Renaissance to be of immense antiquity, perhaps older than Moses. Cosimo de’ Medici was so impatient to rea", "close": "The Medici paid a fortune to read it first. Now it costs £1.99.", "quote": "“As above, so below. As within, so without. As the universe, so the soul.”"}, {"id": "emerald-tablet", "title": "The Emerald Tablet of Hermes", "sub": "Tabula Smaragdina", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "Attributed to Hermes Trismegistus. Transmitted through Arabic alchemy in the 8th century. The most copied, translated, and suppressed text in the Western esoteric tradition.", "desc": "The Emerald Tablet is thirteen sentences long. In those thirteen sentences it claims to contain the secret of the whole world. “As above, so below” is its most famous line — the basis of the Hermetic principle that the macrocosm and microcosm mirror each other, that the structure of the universe is reflected in the structure of the human soul, that to understand one is to understand the other.", "close": "Newton translated it in secret. It is thirteen sentences. Here they are.", "quote": "“That which is Below corresponds to that which is Above, and that which is Above corresponds to that which is Below, to accomplish the miracle of the One Thing.”"}, {"id": "kybalion", "title": "The Kybalion", "sub": "Hermetic Philosophy", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "Published 1908 by anonymous “Three Initiates.” Claims to distil ancient Hermetic wisdom suppressed for millennia. Taught privately in esoteric circles for decades before publicatio", "desc": "The Kybalion appeared in 1908, published anonymously by “Three Initiates” who claimed to be transmitting the essence of a secret Hermetic tradition — a philosophy of mind, reality, and universal law that had been taught only in private for centuries. The book distils this tradition into seven principles: Mentalism (all is mind), Correspondence (as above, so below), Vibration, Polarity, Rhythm, Cau", "close": "Seven principles. All of reality. Here.", "quote": "“The lips of Wisdom are closed, except to the ears of Understanding.”"}, {"id": "key-of-solomon", "title": "The Key of Solomon", "sub": "Clavicula Salomonis", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "Medieval compilation. Burned and banned repeatedly by the Inquisition. Seized from magicians, witches, and scholars across five centuries of persecution.", "desc": "The Key of Solomon is the foundational grimoire of the Western magical tradition — a manual for ceremonial magic that claims to transmit the magical system of King Solomon himself. It describes the construction of pentacles, the preparation of the magician, the correct hours and days for operations, the precise words of conjuration, and the creation of the magical circle that protects the practiti", "close": "Banned by the Inquisition. Burned across Europe. Here it is.", "quote": "“The Holy One hath given this to thee so that thou mayest accomplish all thy desires, provided that thou dost not exceed the limits of His will.”"}, {"id": "lesser-key-of-solomon", "title": "The Lesser Key of Solomon", "sub": "The Ars Goetia", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "17th century compilation from older sources. The most complete catalogue of demons in Western occultism. Banned, burned, and confiscated across four centuries.", "desc": "The Lemegeton Clavicula Salomonis — the Lesser Key of Solomon — consists of five books, the first of which, the Ars Goetia, is the most famous catalogue of demons in Western history. It names, describes, ranks, and provides the seals of 72 demons: their abilities, their appearance, the number of legions they command, and the precise ritual methods for summoning and binding them. This is the text t", "close": "The complete list. Banned for four hundred years. Here.", "quote": "“The First Principal Spirit is a King ruling in the East, called Bael. He maketh thee to go Invisible. He ruleth over 66 Legions of Infernal Spirits.”"}, {"id": "book-of-abramelin", "title": "The Sacred Magic of Abramelin", "sub": "Complete Edition", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "15th century. Transmitted in manuscript in Hebrew and German. The single most influential magical text of the modern era. Never published until 1898.", "desc": "The Book of Abramelin is a letter from a Jewish mage named Abraham of Worms to his son Lamech, describing his encounter with the Egyptian magician Abramelin and the system of magic he received. The central operation — an eighteen-month retreat of prayer, purification, and moral examination culminating in direct contact with one’s Holy Guardian Angel — became the cornerstone of modern ceremonial ma", "close": "Unpublished for 400 years. The most copied magical manuscript in Europe. Here.", "quote": "“Thou shalt invoke the guardian angel, and thou shalt beg him to grant thee the assistance of the holy angels, and their guard and protection.”"}, {"id": "arbatel-of-magic", "title": "The Arbatel of Magic", "sub": "Arbatel de Magia Veterum", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "Published Basel, 1575. Openly magical yet uniquely Christian in spirit. The grimoire that influenced Paracelsus, John Dee, and the Rosicrucian tradition. Banned, then forgotten.", "desc": "The Arbatel of Magic is unique among grimoires: it is a Christian magical text. Published openly in Basel in 1575, it describes not demonic conjuration but communication with seven Olympian spirits — planetary governors of the cosmic order who are willing to work with sincere practitioners. The book opens not with threats and bindings but with exhortations to virtue, prayer, and trust in God.", "close": "The most virtuous grimoire. Banned anyway.", "quote": "“Be subject to no creature, but to God alone who made thee. For if thou wilt serve men and evil spirits in stead of God, thou art not only a fool but impious.”"}, {"id": "sixth-seventh-books-of-moses", "title": "The Sixth and Seventh Books of Moses", "sub": "Complete Edition", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "18th century German publication claiming to reveal the secret magic Moses used in Egypt. Brought to America by German immigrants, used in Hoodoo and African American folk magic.", "desc": "The premise of the Sixth and Seventh Books of Moses is that the Five Books of Moses — the Pentateuch — were not the whole of Moses’ revelation. Moses received additional books on Sinai: books of magical practice, books of seals and sigils, books of the power of God’s names. These were suppressed, kept secret, transmitted only to initiates. The Sixth and Seventh Books of Moses claims to be their re", "close": "The secret books Moses received. Hidden for three thousand years. Revealed here.", "quote": "“These are the secret names and seals which God gave unto Moses on Mount Sinai, and which were not written in the Five Books.”"}, {"id": "grand-grimoire", "title": "The Grand Grimoire", "sub": "The Red Dragon", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Published 17th–18th century. Claims descent from Solomon. Among the most feared magical texts in Western Europe. Possession was grounds for arrest in multiple countries.", "desc": "The Grand Grimoire — also known as the Red Dragon — has the reputation of being the most dangerous book in the Western magical tradition. It describes how to make a pact with Lucifuge Rofocale, the prime minister of hell, using a blood compact. It provides the blasting rod, a tool for commanding spirits. It claims to be the supreme secret of ceremonial magic, surpassing all other grimoires. Its no", "close": "The most feared book in Europe. Here, finally, is what it actually says.", "quote": "“I promise thee, Lucifuge Rofocale, to give thee a spirit in twenty years, to sign this with my blood, and I swear to show thee gratitude.”"}, {"id": "grimorium-verum", "title": "Grimorium Verum", "sub": "The True Grimoire", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Published 1817, but claiming origins in Solomon’s magic. The workingman’s grimoire: practical, direct, stripped of theological pretension. Condemned and confiscated across Europe.", "desc": "The Grimorium Verum — the True Grimoire — is the working practitioner’s manual of the French magical tradition. Less philosophically elaborate than the Key of Solomon, less notorious than the Grand Grimoire, it is a text of practical instruction: how to make the magical implements, how to prepare the parchment from the skin of a virgin kid, what to draw and what to say, and the hierarchy of spirit", "close": "The practical manual. No philosophy, no theology. Just how to do it.", "quote": "“Lucrification, that is to say the discovery of hidden treasure, can only be undertaken by him who possesses the ring of Solomon.”"}, {"id": "black-pullet", "title": "The Black Pullet", "sub": "Science of Magical Talismans", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Published in France circa 1800, claiming Egyptian origin. A system of 22 magical rings and talismans taught by an ancient sage to a French officer. Banned and seized.", "desc": "The Black Pullet presents itself as the memoir of a French officer who survived the Battle of the Pyramids in 1798, and while sheltering in an ancient Egyptian tomb, encountered a mysterious old man who taught him a complete system of 22 magical talismans and 22 magical rings. Each talisman grants a specific power: invisibility, discovering treasure, commanding love, calling spirits. The black pul", "close": "Egyptian magic. A French soldier. A secret that was supposed to die in a tomb.", "quote": "“I will initiate thee into the mysteries of the grand masters; thou wilt learn how to command the spirits of the air, the earth, the sea and the fire.”"}, {"id": "sefer-yetzirah", "title": "Sefer Yetzirah", "sub": "The Book of Formation", "tag": "kabbalah", "cat": "Jewish Mysticism", "stamp": "Written 3rd–6th century AD. The foundational text of Kabbalah, describing God’s creation of the universe through 32 paths of wisdom. Circulated secretly for a thousand years.", "desc": "The Sefer Yetzirah — Book of Formation — is the oldest and most fundamental text of Jewish mysticism. In six short chapters, it describes God’s creation of the universe through thirty-two mysterious paths of wisdom: ten sephiroth (divine emanations) and twenty-two letters of the Hebrew alphabet. Through these thirty-two elements, all of reality was formed. The book attributes this teaching to Abra", "close": "The text that gave birth to Kabbalah. Kept secret for a thousand years.", "quote": "“With thirty-two mystical paths of Wisdom engraved Yah, the Lord of Hosts, the God of Israel, the living God, Almighty God.”"}, {"id": "egyptian-book-of-the-dead", "title": "The Egyptian Book of the Dead", "sub": "The Papyrus of Ani", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "Written over 3,000 years, compiled circa 1550 BC. Suppressed by Akhenaten's monotheist revolution. Buried with the dead for millennia. Brought to Europe and misunderstood for two c", "desc": "The Egyptian Book of the Dead is not one book but a collection of magical spells, hymns, and instructions assembled over more than a thousand years and placed in the tombs of the dead to guide them through the underworld. The Papyrus of Ani, from which this translation is made, is the most complete surviving manuscript: a 78-foot-long illustrated scroll buried with a royal scribe around 1250 BC, a", "close": "They were writing about resurrection and judgment a thousand years before Moses.", "quote": "“Hail to thee, great God, Lord of the Two Truths! I have come to thee, my Lord, that I may behold thy beauties.”"}, {"id": "egyptian-magic", "title": "Egyptian Magic", "sub": "E.A. Wallis Budge", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "The magical practices of pharaonic Egypt: amulets, names of power, the evil eye, transformation spells. Suppressed by Christianity, dismissed by Enlightenment scholars, now being r", "desc": "Egyptian Magic is E.A. Wallis Budge’s systematic study of the magical practices of ancient Egypt: the use of names of power, amulets, protective spells, the evil eye, shapeshifting, the animation of images. Budge draws directly on the papyri and tomb texts he translated throughout his career at the British Museum, presenting Egyptian magic not as superstition but as a coherent, sophisticated syste", "close": "Three thousand years of magical practice. Suppressed. Here recovered.", "quote": "“The Egyptians believed that it was possible to acquire the knowledge and power of the gods, and that a man who possessed such knowledge was all-powerful.”"}, {"id": "tibetan-book-of-the-dead", "title": "The Tibetan Book of the Dead", "sub": "Bardo Thodol", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "Written by Padmasambhava, 8th century. Hidden as a “treasure text” for 600 years. Suppressed by Chinese occupation of Tibet. First published in English 1927.", "desc": "The Bardo Thodol — Liberation Through Hearing in the Intermediate State — is a manual for navigating the forty-nine days between death and rebirth. It was composed by the tantric master Padmasambhava in the 8th century, hidden as a “terma” (treasure text) in a cave in Tibet, and rediscovered by the treasure-revealer Karma Lingpa in the 14th century. It describes in precise detail the sequence of v", "close": "Instructions for death. Hidden for six centuries. Read them now.", "quote": "“O nobly born, now the Clear Light of Reality Itself dawns upon thee. Recognise it. O nobly born, thy present awareness, vacant, naked, is itself the very Reality.”"}, {"id": "bhagavad-gita", "title": "The Bhagavad Gita", "sub": "The Song of God", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "Written circa 400 BC–200 AD. Suppressed by British colonial administrators who viewed it as the foundation of Hindu resistance to imperial rule. Banned in several colonial contexts", "desc": "The Bhagavad Gita — the Song of God — is a dialogue between the warrior Arjuna and his charioteer Krishna on the battlefield of Kurukshetra, moments before a cataclysmic war. Arjuna cannot bring himself to fight. Krishna’s answer constitutes the entire text: eighteen chapters of philosophy on duty, the nature of the self, the paths to liberation, and the nature of the divine.", "close": "Colonial authorities feared this book. Their instincts were correct.", "quote": "“Never the spirit was born; the spirit shall cease to be never. Never was time it was not; end and beginning are dreams.”"}, {"id": "upanishads", "title": "The Principal Upanishads", "sub": "Complete Edition", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "Written 800–200 BC. Deliberately esoteric — “upanishad” means “sitting close to” a teacher. Transmitted orally in strict secrecy for centuries. Access restricted by caste.", "desc": "The Upanishads are the philosophical heart of the Vedic tradition — a series of dialogues, meditations, and teachings on the nature of the self (Atman) and its identity with the absolute ground of being (Brahman). “That art thou” — tat tvam asi — is their central insight: you are that which you seek. The apparent separation between the individual soul and the cosmic whole is illusion.", "close": "Restricted by caste for three thousand years. Universal now.", "quote": "“In the beginning all this was Self alone, in the shape of a person. He looking round saw nothing but his Self. He first said, ‘This is I.’”"}, {"id": "dhammapada", "title": "The Dhammapada", "sub": "Path of Truth", "tag": "mystery", "cat": "Mystery Schools", "stamp": "3rd century BC. Compiled after the Buddha’s death. Suppressed in Buddhist countries under Theravada and then by colonial Christianity. The most widely read Buddhist text.", "desc": "The Dhammapada — the Path of Dhamma, or the Path of Truth — is a collection of 423 verses attributed to the Buddha, compiled after his death as a summary of his teaching. It opens with one of the most revolutionary statements in religious history: “Mind is the forerunner of all actions. All deeds are led by mind, created by mind.” Not God. Not fate. Not karma inherited from past lives. Mind.", "close": "The Buddha’s core teaching. No god. No priest. No intermediary. Just mind.", "quote": "“All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts.”"}, {"id": "tao-te-ching", "title": "The Tao Te Ching", "sub": "The Way and Its Power", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "6th–4th century BC, attributed to Laozi. Banned by Qin Shi Huang in the Great Burning of Books, 213 BC. Suppressed repeatedly under Confucian and Communist regimes.", "desc": "The Tao Te Ching — the Classic of the Way and Its Power — is 5,000 Chinese characters written in the 6th or 4th century BC, attributed to a sage named Laozi (the Old Master). It is the most translated book in history after the Bible. Its 81 short chapters describe the Tao: a nameless, formless ground of being that underlies all reality and cannot be grasped, only aligned with.", "close": "Burned by emperors. Suppressed by Communists. Still here.", "quote": "“The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name.”"}, {"id": "i-ching", "title": "The I Ching", "sub": "Book of Changes", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Over 3,000 years old. The only Chinese classic to survive Qin Shi Huang’s Book Burning of 213 BC, because it was classified as a divination manual rather than philosophy.", "desc": "The I Ching — the Book of Changes — is a divination system based on 64 hexagrams, each consisting of six lines (broken or unbroken, yin or yang), with accompanying texts of commentary attributed to the legendary kings Wen and Wu and to Confucius. It is one of the oldest texts in human history, with layers accumulated over three thousand years.", "close": "Survived the book burning by accident. 3,000 years old. Still consulting it.", "quote": "“The great man brings about no evil, and yet he is not without blame. He has not failed in his duty.”"}, {"id": "avesta-gathas", "title": "The Gathas of Zarathustra", "sub": "The Hymns of Zoroaster", "tag": "mystery", "cat": "Mystery Schools", "stamp": "2nd millennium BC or earlier. The oldest religious poetry in any Indo-European language. The Avesta was burned twice: by Alexander the Great and by Arab Muslim conquest. What survi", "desc": "The Gathas of Zarathustra are seventeen hymns composed by the prophet Zarathustra (Zoroaster), possibly in the 2nd millennium BC — making them among the oldest religious poetry in any Indo-European language. They describe a cosmic struggle between Ahura Mazda (the Wise Lord, truth) and Angra Mainyu (the Destructive Spirit, lie) — a dualistic framework that directly influenced Jewish apocalypticism", "close": "Burned twice. A quarter survives. The oldest religious poetry you will ever read.", "quote": "“With hands outstretched in devotion, Zarathustra prays for the two existences — the one of this world and the other of thought — of Righteousness.”"}, {"id": "orphic-hymns", "title": "The Orphic Hymns", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "3rd–4th century AD compilation of older material. The sacred poetry of the Greek mystery religions. Outlawed by Theodosius I, 391 AD, when he banned pagan religion throughout the R", "desc": "The Orphic Hymns are 87 Greek poems addressed to the gods, attributed to the mythical poet-prophet Orpheus who descended into Hades and returned. They were used as liturgy in the Greek mystery religions — private religious cults whose initiates underwent secret rites promising direct knowledge of the divine, experience of death and rebirth, and liberation from the cycle of reincarnation.", "close": "The prayers of the mystery religions. Outlawed. Here restored.", "quote": "“Night, parent goddess, source of sweet repose, from whom at first both Gods and men arose.”"}, {"id": "chaldean-oracles", "title": "The Chaldean Oracles", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "2nd century AD. Attributed to Julian the Theurgist. The sacred scripture of late Neoplatonism. Burned with the library of Alexandria. Survived only in fragments quoted by commentat", "desc": "The Chaldean Oracles are the sacred scripture of the Neoplatonic mystery tradition — a series of hexameter verses attributed to a divine revelation received by Julian the Theurgist in the 2nd century AD. Porphyry, Iamblichus, and Proclus all commented on them as the highest of all sacred texts. Julian the Apostate, Rome’s last pagan emperor, included them at the centre of his attempted pagan reviv", "close": "The sacred scripture of the last pagans. Burned. Reassembled from fragments.", "quote": "“Haste not to the dark world, beneath which lies the Abyss, the bottomless Gehenna, ever horrible and dark, delighting in unimaginable images.”"}, {"id": "golden-verses-pythagoras", "title": "The Golden Verses of Pythagoras", "sub": "With Commentary by Hierocles", "tag": "mystery", "cat": "Mystery Schools", "stamp": "5th century BC or earlier. The moral code of the Pythagorean brotherhood, an initiatic society. The brotherhood was burned out and dispersed circa 450 BC, its members scattered, it", "desc": "The Golden Verses of Pythagoras are the moral and philosophical code of the Pythagorean brotherhood — a secret society founded in the 6th century BC in Croton that combined mathematics, music, philosophy, and an initiatory religious practice centred on the transmigration of souls. The brotherhood exercised political influence in Greek colonial cities in southern Italy, and around 450 BC they were ", "close": "The Pythagoreans were burned out. Their code survived. Here it is.", "quote": "“First worship the Immortal Gods, as the law commands. Reverence the Oath. Then honour the illustrious Heroes.”"}, {"id": "community-rule", "title": "The Community Rule", "sub": "Dead Sea Scrolls — Manual of Discipline", "tag": "kabbalah", "cat": "Jewish Mysticism", "stamp": "2nd–1st century BC. The internal law of the Qumran sect. Hidden in caves before the Roman destruction of 68 AD. Suppressed by the Vatican for 40 years after discovery in 1947.", "desc": "The Dead Sea Scrolls were discovered in caves near Qumran in 1947, the most significant archaeological find of the 20th century: approximately 900 manuscripts from a Jewish sect that lived in the desert from roughly 150 BC to 68 AD, when the Romans destroyed their community during the Jewish War. The scrolls include the oldest surviving manuscripts of the Hebrew Bible and a set of previously unkno", "close": "Hidden in 68 AD. Found 1947. Suppressed for 40 more years by scholars.", "quote": "“For God has established the two spirits in equal measure until the determined end, and until the Renewal. He knows the reward of their deeds from all eternity.”"}, {"id": "war-scroll", "title": "The War Scroll", "sub": "Sons of Light vs Sons of Darkness", "tag": "kabbalah", "cat": "Jewish Mysticism", "stamp": "1st century BC. The military manual of the apocalyptic war between the Children of Light and the Children of Darkness. Hidden at Qumran 68 AD, recovered 1947.", "desc": "The War Scroll is the most extraordinary military manual in the ancient world. It describes in precise tactical detail a forty-year apocalyptic war between the Sons of Light (the Qumran community and their angelic allies) and the Sons of Darkness (the Romans, the Kittim, and the fallen angels led by Belial). The document specifies troop formations, banner inscriptions, trumpet signals, priestly pr", "close": "The military plan for the end of the world. Here, in full.", "quote": "“This shall be a time of salvation for the people of God, an age of dominion for all the members of His company, and of everlasting destruction for the company of Belial.”"}, {"id": "damascus-document", "title": "The Damascus Document", "sub": "Dead Sea Scrolls", "tag": "kabbalah", "cat": "Jewish Mysticism", "stamp": "Written 2nd–1st century BC. Fragments found in the Cairo Geniza 1896, complete text at Qumran 1947. Describes the Teacher of Righteousness and the sect’s theology of history.", "desc": "The Damascus Document describes the founding of the Qumran sect: a group who separated from mainstream Judaism under a mysterious leader called the Teacher of Righteousness, opposed by an equally mysterious adversary called the Man of Lies. The community went into exile, understood themselves as the true Israel, and awaited the coming of two Messiahs — one priestly, one royal. They also had specif", "close": "The Teacher of Righteousness existed before Jesus. Here is his community’s law.", "quote": "“Listen now, all you who know righteousness, and consider the works of God; for He has a dispute with all flesh and will condemn all those who despise Him.”"}, {"id": "chemical-wedding", "title": "The Chemical Wedding of Christian Rosenkreutz", "sub": "Anno 1459", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Published Strasbourg 1616. The founding text of Rosicrucianism alongside the Fama and Confessio. The three manifestos caused a European-wide political and religious panic.", "desc": "In 1614 and 1615, two anonymous pamphlets appeared in Germany: the Fama Fraternitatis and the Confessio Fraternitatis, announcing the existence of a secret brotherhood — the Rosicrucians — founded by a mysterious sage called Christian Rosenkreutz who had travelled to the East and brought back a universal wisdom. In 1616, a third text appeared: the Chemical Wedding. Together, they caused the greate", "close": "The pamphlet that sent Europe into panic. No one ever found the brotherhood.", "quote": "“This day, this day, this, this, the Royal Wedding is. Art thou thereto by birth inclined, and unto joy of God designed?”"}, {"id": "fama-fraternitatis", "title": "Fama Fraternitatis", "sub": "The Rosicrucian Manifesto", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Published Kassel 1614. Immediately suppressed by Imperial authorities. 400 years of debate: was the Rosicrucian Brotherhood real? The answer has never been settled.", "desc": "The Fama Fraternitatis is an invitation and a challenge. It announces that a secret brotherhood of eight scholars, founded by Christian Rosenkreutz after his journey to the East, has decided the time is ripe to reveal itself and its wisdom to the world. It describes Rosenkreutz’s life and the discovery of his tomb, containing his perfectly preserved body, a vault painted with occult symbols, and b", "close": "The secret society that may not exist. The manifesto that changed Europe.", "quote": "“We speak unto you by parables, but would willingly bring you to the right, simple, easy, and ingenuous exposition, understanding, declaration, and knowledge of all secrets.”"}, {"id": "confessio-fraternitatis", "title": "Confessio Fraternitatis", "sub": "The Second Rosicrucian Manifesto", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Published Kassel 1615. Companion text to the Fama. More explicitly alchemical and anti-Papal than its predecessor. Immediately condemned by Jesuit authorities.", "desc": "The Confessio Fraternitatis is more explicit than the Fama and more aggressive. It announces a coming universal reformation — a transformation of all knowledge, all religion, and all politics that is already underway. It attacks the Pope as the Antichrist. It claims the Brotherhood possesses the Universal Medicine and the Philosopher’s Stone. It invites all learned men to respond.", "close": "The Jesuits condemned it. The Scientific Revolution followed anyway.", "quote": "“We do testify that after a time there will now be a general reformation both of divine and human things, according to our desire, and the expectation of others.”"}, {"id": "shepherd-of-hermas", "title": "The Shepherd of Hermas", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "Written circa 100–150 AD. Read as scripture in many early churches. Listed in the Muratorian Canon as suitable for private but not public reading. Gradually excluded from the New T", "desc": "The Shepherd of Hermas is one of the most widely read texts in early Christianity, bound into some of the earliest Bible manuscripts including the Codex Sinaiticus. It was treated as scripture by Clement of Alexandria, Origen, and Irenaeus. For the first two centuries of Christianity, it existed on the fuzzy border of the canon, read alongside the Epistles in church services.", "close": "In the Bible for two centuries. Quietly removed. Here restored.", "quote": "“Hear, O Hermas. I am not a God, but I am the angel who has been appointed to guard thee and to lead thee.”"}, {"id": "acts-of-john", "title": "The Acts of John", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "2nd century. Condemned at the Second Council of Nicaea, 787 AD, which ordered all copies burned. Contains a dance of Jesus and a description of the crucifixion contradicting canoni", "desc": "The Acts of John contains two of the most extraordinary scenes in all non-canonical Christian literature. In the first, on the night before the crucifixion, Jesus gathers his disciples and leads them in a circle dance while singing a hymn — the Hymn of the Dance — in which the disciples respond to each line with “Amen.” In the second, John sees that Jesus does not cast a shadow, that his footprint", "close": "The Council ordered it burned. The hymn survived in a cave.", "quote": "“I would be saved, and I would save. Amen. I would be loosed, and I would loose. Amen. I would be wounded, and I would wound. Amen. I would be born, and I would bear. Amen.”"}, {"id": "acts-of-peter", "title": "The Acts of Peter", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "2nd century. Contains the “Quo Vadis” story and Peter’s upside-down crucifixion. Condemned at the Decretum Gelasianum. Popularised in the 19th century despite official suppression.", "desc": "The Acts of Peter contains the origin of two of the most enduring stories in Christian tradition: the “Quo Vadis” episode, in which Peter flees Rome to escape persecution and meets the risen Jesus on the road, who tells him he is going to Rome to be crucified again, prompting Peter to turn back; and Peter’s request to be crucified upside-down, because he is not worthy to die in the same position a", "close": "Condemned as apocryphal. Its stories became the Church’s own.", "quote": "“Domine, quo vadis? — Lord, where are you going? — I am going to Rome to be crucified again.”"}, {"id": "acts-of-thomas", "title": "The Acts of Thomas", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "3rd century Syriac text. The Apostle Thomas’s mission to India. Contains the Hymn of the Pearl — one of the greatest allegorical poems of the ancient world. Condemned as Gnostic.", "desc": "The Acts of Thomas describes the apostle Thomas’s mission to India — sold as a slave to an Indian king, building not palaces but spiritual mansions in heaven. The text contains the Hymn of the Pearl, an extended allegory of the soul’s exile and return that stands among the great poetic achievements of late antiquity: a prince sent from the East forgets his mission in Egypt, is awakened by a letter", "close": "Thomas went to India. He was murdered for it. This is his account.", "quote": "“I am not the bridegroom, but I am the servant of the bridegroom; for I am not worthy to loose the latchet of his sandals.”"}, {"id": "book-of-the-bee", "title": "The Book of the Bee", "sub": "Syriac Cosmology", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Written by Solomon of Basra, 13th century. A Nestorian Christian encyclopaedia of sacred history from Creation to the Last Day. Suppressed in the West as Eastern heresy.", "desc": "The Book of the Bee is a 13th-century Syriac encyclopaedia of sacred history written by Solomon, Bishop of Basra — a bishop of the Church of the East, the Nestorian tradition that the Council of Ephesus in 431 AD declared heretical and expelled from the Roman Empire. The Nestorian Church spread eastward instead: through Persia, India, China, and Central Asia, becoming the most geographically wides", "close": "The Nestorian tradition reached China before Europe discovered America. Here is its scripture.", "quote": "“The bee gathers from all flowers and from all herbs; and so did Solomon, the compiler of this book, gather from all scriptures.”"}, {"id": "life-of-adam-and-eve", "title": "The Life of Adam and Eve", "sub": "Apocalypse of Moses", "tag": "mystery", "cat": "Mystery Schools", "stamp": "1st century AD. Adam and Eve’s life after Eden: their penances, Eve’s second temptation, their deaths, and their burial by angels. Never included in any Biblical canon.", "desc": "Genesis ends the story of Adam and Eve with their expulsion from Eden. The Life of Adam and Eve begins there: what happened to them for the nine hundred and thirty years that followed? This text answers that question. Adam and Eve perform penances in the rivers Jordan and Tigris. Eve is deceived by Satan a second time. Seth travels back to Paradise to seek the oil of mercy for his dying father. An", "close": "Genesis ends at the gate. This text shows you what happened next.", "quote": "“And Seth went with his mother Eve near Paradise, and they wept and prayed and besought God to send His angel to give them the oil of mercy.”"}, {"id": "sibylline-oracles", "title": "The Sibylline Oracles", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "2nd century BC–5th century AD. Prophecies attributed to ancient Sibyls, used to legitimise both Jewish and Christian claims. The pagan originals were burned by the Roman Senate.", "desc": "The Sibylline Oracles are a collection of prophetic verses attributed to the ancient Sibyls — Greek prophetesses who spoke for Apollo. The original Roman Sibylline Books were kept in a vault beneath the Temple of Jupiter and could only be consulted by special commission of the Roman Senate in times of crisis. In 83 BC, the vault burned. The Senate attempted to reconstruct the oracles but the resul", "close": "The Romans burned their own sacred prophecies. Jews and Christians rewrote them. Here they are.", "quote": "“A great king shall come from Asia, a prince of a great host, who shall destroy the Roman power and lift up a holy banner over the earth.”"}, {"id": "zohar-selections", "title": "The Zohar", "sub": "The Book of Radiance — Selected Portions", "tag": "kabbalah", "cat": "Jewish Mysticism", "stamp": "Composed 13th century Spain by Moses de Leon, attributed to 2nd century Rabbi Shimon bar Yochai. The central text of Kabbalah. Banned by rabbinical authorities multiple times.", "desc": "The Zohar — the Book of Radiance — is the central text of Kabbalah: a multi-volume mystical commentary on the Torah presented as the teachings of the 2nd-century Rabbi Shimon bar Yochai, dictated in a cave where he hid for thirteen years. Modern scholarship attributes its composition to Moses de Leon of Guadalajara, writing in 13th-century Spain. Whether ancient or medieval, it is one of the most ", "close": "The most sacred book in Kabbalah. Banned repeatedly. Here in translation.", "quote": "“The Torah is a garment. Anyone who thinks that this garment is the Torah itself and nothing more — may his spirit deflate!”"}, {"id": "sepher-raziel", "title": "Sepher Raziel HaMalakh", "sub": "The Book of the Angel Raziel", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "13th century compiled from older sources. The book given to Adam by the angel Raziel after the expulsion from Eden. Contains angel names, astrology, and protective magic. Burned as", "desc": "Sepher Raziel HaMalakh — the Book of the Angel Raziel — claims to be the book that God gave to the angel Raziel to give to Adam after the expulsion from Eden, so that Adam could find his way back to Paradise. It contains the names and functions of the angels, magical formulae, astrological teaching, and the names of God that, when properly pronounced, give power over the cosmos.", "close": "Burned in France. Printed in Amsterdam. Used to protect homes from fire.", "quote": "“Raziel stood by the river that flows out of Eden and called out: Adam! Hearken, and I shall tell thee great and wonderful things.”"}, {"id": "bahir", "title": "The Bahir", "sub": "The Book of Illumination", "tag": "kabbalah", "cat": "Jewish Mysticism", "stamp": "12th century, possibly older. The first Kabbalistic text to introduce the Sephiroth. Circulated secretly for decades before surfacing in Provence around 1176. Condemned as forgery.", "desc": "The Bahir — the Book of Illumination — is the first Kabbalistic text to introduce the concept of the Sephiroth as divine attributes, the framework that would become the Tree of Life. It appeared in Provence in the late 12th century, attributed to a 1st-century rabbi, and immediately became controversial: its teaching on metempsychosis (reincarnation), its anthropomorphic language about God, and it", "close": "The book that invented Kabbalah. Condemned as a forgery. Here.", "quote": "“And why is it called Bahir? As it is written, ‘And now, they do not see light, it is brilliant (bahir) in the skies.’ Even though it is brilliant, people still cannot understand it.”"}, {"id": "enuma-elish", "title": "The Enuma Elish", "sub": "The Babylonian Creation Epic", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "Written circa 18th–12th century BC. The Babylonian creation myth that predates Genesis by over a thousand years and shares its structure. Suppressed by Biblical scholars for a cent", "desc": "When George Smith of the British Museum read Tablet XI of the Epic of Gilgamesh to the Society of Biblical Archaeology in London in 1872, he had discovered a Babylonian flood story — complete with ark, birds, and dove — that was older than Genesis. The room fell silent. The discovery triggered a crisis in Biblical scholarship that has never fully resolved. The Enuma Elish, the Babylonian creation ", "close": "Written a thousand years before Genesis. Sharing Genesis’s structure. Draw your own conclusions.", "quote": "“When on high the heaven had not been named, firm ground below had not been called by name; naught but primordial Apsu, their begetter, and Mummu-Tiamat, she who bore them all.”"}, {"id": "descent-of-inanna", "title": "The Descent of Inanna", "sub": "Queen of Heaven and Earth", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "Written circa 2100 BC. The oldest narrative of a deity’s descent into the underworld and resurrection. Predates Christ by 2,000 years. Suppressed as pagan mythology.", "desc": "The Descent of Inanna, written in Sumerian approximately 2100 BC, is the oldest recorded narrative of death and resurrection in human history. The goddess Inanna, Queen of Heaven and Earth, decides to descend into the Great Below — the underworld ruled by her sister Ereshkigal. At each of seven gates, she is stripped of one of her divine attributes until she arrives naked before her sister’s thron", "close": "Died. Descended into hell. Rose on the third day. Written in 2100 BC.", "quote": "“From the Great Above she opened her ear to the Great Below. From the Great Above the goddess opened her ear to the Great Below.”"}, {"id": "epic-of-gilgamesh", "title": "The Epic of Gilgamesh", "sub": "Complete Edition", "tag": "ancient", "cat": "Ancient Wisdom", "stamp": "Written circa 2100 BC. Contains a flood narrative predating Noah by over a thousand years. Suppressed by Biblical scholars after George Smith’s 1872 discovery caused international ", "desc": "The Epic of Gilgamesh is the oldest surviving literary work in human history: the story of Gilgamesh, King of Uruk, written on clay tablets in cuneiform script in ancient Sumer approximately 2100 BC. When George Smith of the British Museum translated Tablet XI in 1872 and found a flood story — with an ark, animals taken in pairs, birds sent out, a dove that did not return — that was over a thousan", "close": "Older than the Bible. Contains the flood. Here, unfiltered.", "quote": "“Gilgamesh, whither rovest thou? The life thou pursuest thou shalt not find. When the gods created mankind, they allotted death to mankind, but life they retained in their own keeping.”"}, {"id": "gospel-of-ebionites", "title": "The Gospel of the Ebionites", "sub": "Jewish-Christian Gospel", "tag": "mystery", "cat": "Mystery Schools", "stamp": "2nd century. The gospel of Jewish Christians who followed Jesus while remaining committed to Torah. Condemned as heretical by Epiphanius. Survives only in quotations.", "desc": "The Ebionites were Jewish Christians — followers of Jesus who maintained Jewish law, rejected Paul as a heretic, denied the virgin birth, and understood Jesus as a human prophet appointed Son of God at his baptism. They represented the original Jewish Christianity that preceded the Gentile mission. Their gospel — probably a Hebrew or Aramaic version of Matthew — was condemned as heretical by Epiph", "close": "The Jewish Christians were erased from history. Seven quotations survive.", "quote": "“Think not that I am come to abolish the law. I have come not to abolish but to fulfil. Verily I say to you, sooner shall heaven and earth pass away than one jot or tittle of the law.”"}, {"id": "three-books-occult-philosophy", "title": "Three Books of Occult Philosophy", "sub": "Heinrich Cornelius Agrippa", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "Written 1509–10, published Cologne 1531. The most comprehensive encyclopaedia of Renaissance magic. Banned by the Inquisition, burned in multiple cities, and still in print five ce", "desc": "Heinrich Cornelius Agrippa von Nettesheim was a German polymath who wrote the Three Books of Occult Philosophy at the age of twenty-three and spent the next twenty years afraid to publish them. When they finally appeared in print in 1531, the Inquisition moved quickly. The books were banned. Copies were burned. Agrippa was accused of sorcery, imprisoned, and died in poverty. His work outlasted eve", "close": "Banned at 23. Published anyway. The source of all Western magic.", "quote": "“So great is the power of occult influence, that, unless we know the secrets of things, we cannot know how to judge them or how to treat them.”"}, {"id": "liber-juratus", "title": "The Sworn Book of Honorius", "sub": "Liber Juratus Honorii", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "13th century. Claims to be the distillation of magic from 93 masters before the Pope burned their books. The oldest complete grimoire in the Latin West.", "desc": "The Sworn Book of Honorius — the Liber Juratus — opens with a preface that reads like an act of defiance against suppression itself. It claims that ninety-three masters of the magical arts gathered in Naples because the Pope had ordered all books of magic burned and all practitioners killed. Their response: to distil the entire tradition into one book, and to bind every person who received it unde", "close": "The Pope burned their books. They distilled everything into one. Here it is.", "quote": "“The first and chief purpose of this book is that a man may behold the face of God the Creator, and have knowledge of that face.”"}, {"id": "apocalypse-of-thomas", "title": "The Apocalypse of Thomas", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "4th–5th century. Describes the seven days before the Last Day in precise sequence. Condemned by the Decretum Gelasianum. Too specific about the end of the world for institutional c", "desc": "The Apocalypse of Thomas describes the final seven days before the end of the world in extraordinary sequential detail: the signs that will appear on each day, from the first thunder that shakes all creation to the day when the stars fall and the sky rolls back like a scroll. Jesus delivers this teaching to Thomas privately, as a final gift of knowledge.", "close": "Too specific about the end of the world. Suppressed. Read before it happens.", "quote": "“On the first day there will be a great and mighty voice in the firmament of heaven, and there will be a bloody rain from the north to the east of the whole firmament.”"}, {"id": "prayer-of-manasseh", "title": "The Prayer of Manasseh", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "Written circa 2nd–1st century BC. Cited in 2 Chronicles as existing. Never found in Jewish scripture. In the Catholic Bible for centuries; removed at the Council of Trent, 1546.", "desc": "The Prayer of Manasseh is fifteen verses of penitential prayer attributed to Manasseh, King of Judah, who according to 2 Chronicles (33:18-19) prayed to God after being taken captive to Babylon, and was restored to his throne. The chronicler specifically states that this prayer is written in “the book of the kings of Israel” and “the chronicles of Hozai.” Neither of those books survives. The Praye", "close": "The Bible says it exists. Then hides it. Here it is.", "quote": "“Thou art the Lord Most High, of great compassion, long-suffering, very merciful, and repentest of the evils of men. Thou, O Lord, according to thy great goodness hast promised repentance and forgiveness to them that have sinned against thee.”"}, {"id": "apocalypse-elijah", "title": "The Apocalypse of Elijah", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "1st–4th century. Egyptian Jewish-Christian apocalypse. Contains details about the Antichrist absent from Revelation. Cited and condemned by Origen as too vivid in its imagery.", "desc": "The Apocalypse of Elijah is an Egyptian apocalypse, written by Jewish-Christian communities between the 1st and 4th centuries, that describes the coming of the Antichrist in greater detail than anywhere in canonical scripture. The Antichrist will be a thin-legged, long-faced youth with a tuft of grey hair, who performs miracles, claims to be God, and can be recognised as a fraud by his inability t", "close": "A physical description of the Antichrist. The Church preferred you not have it.", "quote": "“The shameless one will stand up in the holy places. He will say: I am the Christ, though he is not. He will say: I am God, though he is a liar.”"}, {"id": "ars-notoria", "title": "The Ars Notoria", "sub": "The Notory Art of Solomon", "tag": "hermetic", "cat": "Hermetic Arts", "stamp": "13th century, claiming Solomonic origin. A system of prayers and magical diagrams for acquiring all human knowledge. Condemned by Thomas Aquinas as diabolical.", "desc": "The Ars Notoria — the Notory Art — is a medieval magical text claiming to teach the acquisition of all knowledge through a combination of prayer, fasting, meditation on magical diagrams called “notae,” and the pronunciation of specific orations in Latin, Greek, Hebrew, and an unknown tongue. The system promises mastery of all seven liberal arts, perfect memory, eloquence, and ultimately a vision o", "close": "Thomas Aquinas condemned it. Here it is. Judge for yourself.", "quote": "“By these prayers and orations, with the figures here presented, a man may obtain the knowledge of all Arts and Sciences, perfect Memory, Eloquence of Speech, and the Grace of God.”"}, {"id": "book-of-giants", "title": "The Book of Giants", "sub": "Dead Sea Scrolls Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "3rd century BC Enochic text, found in multiple Dead Sea Scrolls fragments. Describes the giants’ fate and their prophetic dreams. Suppressed along with 1 Enoch.", "desc": "The Book of Giants fills in one of the most tantalising gaps in the Book of Enoch: what happened to the Nephilim, the giant offspring of the Watchers and human women, after the angels who fathered them were imprisoned? The answer, preserved in several Dead Sea Scrolls fragments, is that the giants had prophetic dreams of their own destruction and sent one of their number — Mahway — flying on wings", "close": "The giants knew they were going to die. They tried to send a message. Here it is.", "quote": "“And there appeared to them a vision in a dream, and the Nephilim saw the dream and feared it, and the two of them had a vision together.”"}, {"id": "clementine-recognitions", "title": "The Clementine Recognitions", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "3rd–4th century. The largest and most complex of the early Christian apocrypha. Presents Peter and Simon Magus in sustained theological debate. Contains proto-orthodox theology and", "desc": "The Clementine Recognitions is a novel-length early Christian text narrating how Clement of Rome — the third or fourth bishop of Rome after Peter — joined Peter’s mission, followed him in his debates with Simon Magus, and eventually discovered that his long-lost family had all converted independently and were scattered across the Mediterranean. The “recognitions” of the title are the family reunio", "close": "The first Pope’s secretary recorded everything. The Church kept some of it. Not all.", "quote": "“The True Prophet has warned us that our God is one, and that He alone is to be worshipped, and that we should not set up many gods, in accordance with the mischievous and deceiving doctrine of the Greeks.”"}, {"id": "epistle-of-apostles", "title": "The Epistle of the Apostles", "sub": "Epistula Apostolorum", "tag": "mystery", "cat": "Mystery Schools", "stamp": "2nd century. A post-resurrection dialogue in which Jesus teaches the eleven apostles. Written to refute Gnosticism from within; later deemed apocryphal itself.", "desc": "The Epistle of the Apostles is unusual among apocryphal texts: it was written not to promote Gnosticism but to refute it. The eleven apostles write a circular letter to the churches of the world, warning against the false teachings of Simon and Cerinthus, and recording what Jesus taught them in private after the resurrection. The irony is that in recording the true teaching against the Gnostics, t", "close": "Written against Gnosticism. Condemned as apocryphal. The irony is instructive.", "quote": "“I, the Lord, am the resurrection. I am the life, the light, the resurrection, the living water.”"}, {"id": "iamblichus-mysteries", "title": "On the Mysteries", "sub": "Iamblichus of Chalcis", "tag": "mystery", "cat": "Mystery Schools", "stamp": "4th century. The theological defence of ritual magic by the greatest of the Neoplatonist philosophers. Outlawed when paganism was banned, 391 AD. The last full defence of theurgy b", "desc": "On the Mysteries is the philosophical masterpiece of Iamblichus, the Syrian Neoplatonist who died around 326 AD — the same year Constantine made Christianity the favoured religion of the Roman Empire. It is the most sophisticated defence of ritual magic ever written: a systematic argument that theurgy — the practice of invoking the gods through ritual — is not superstition but the highest form of ", "close": "Written the year Christianity became state religion. The last defence of the gods.", "quote": "“For to be perfectly united with the gods through theurgy, not merely through thought, is the end of the priestly science as we teach it.”"}, {"id": "divine-pymander", "title": "The Divine Pymander of Hermes", "sub": "Complete Edition", "tag": "mystery", "cat": "Mystery Schools", "stamp": "1st–3rd century AD, attributed to Hermes Trismegistus. The vision of creation in the mind of God. Preserved by Arab scholars; rediscovered in Florence 1460; almost immediately cond", "desc": "The Divine Pymander is the first and most important text of the Corpus Hermeticum: the vision in which Hermes Trismegistus falls into a divine trance and encounters Pimander, the Mind of Sovereignty, who shows him the creation of the universe in a vision of overwhelming beauty and horror. The text describes a cosmogony — the origin of the world — and a path of return: how the human soul, fallen in", "close": "Cosimo dropped Plato for this. Bruno was burned for following it.", "quote": "“I am Pimander, the mind of the great Lord, the most mighty and absolute Emperor: I know what thou wouldst have, and I am always present with thee.”"}, {"id": "letter-of-aristeas", "title": "The Letter of Aristeas", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "2nd century BC. Claims to record how Ptolemy II commissioned 72 scholars to translate the Hebrew Bible into Greek — creating the Septuagint. Later denounced as forgery. Yet it shap", "desc": "The Letter of Aristeas claims to be a first-hand account by a courtier of Ptolemy II Philadelphus of how the king commissioned seventy-two Jewish scholars — six from each of the twelve tribes — to translate the Hebrew Torah into Greek on the island of Pharos near Alexandria. The scholars worked independently and, when their translations were compared, every single one was found to be identical. Di", "close": "A document explaining how the Bible was translated. Fabricated. Enormously consequential.", "quote": "\"Each man, as if inspired, wrote the self-same words and the self-same nouns, so that even the heathen who were present perceived that the Law had been granted through divine inspiration.\""}, {"id": "second-book-of-enoch", "title": "The Second Book of Enoch", "sub": "The Slavonic Book of the Secrets of Enoch", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "1st century AD, preserved only in Slavonic. Enoch's ascent through the ten heavens, his transformation into the angel Metatron, and the secrets of creation. Suppressed as pseudepig", "desc": "The Second Book of Enoch — preserved only in Slavonic manuscripts and known as the Slavonic Enoch or the Book of the Secrets of Enoch — describes Enoch's ascent through ten heavens, each inhabited by different orders of angels, culminating in his arrival before the throne of God where he is transformed into the great angel Metatron and dictates 360 books of divine wisdom. The cosmology is extraord", "close": "Ten heavens. A man become an angel. The secrets of creation. All suppressed.", "quote": "\"And I looked and saw an exceedingly great light, and the fiery hosts of the great archangels, and the incorporeal powers, and the dominions, and the principalities, and the powers.\""}, {"id": "testament-of-abraham", "title": "The Testament of Abraham", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "1st–2nd century AD. Abraham tours the entire cosmos and watches the judgment of souls at the moment of death. He refuses to die until forced to. Never canonical in any tradition, d", "desc": "The Testament of Abraham opens with the archangel Michael descending to tell the patriarch Abraham that his death is near. Abraham, who has lived a life of extraordinary righteousness, refuses. He asks instead to be shown the entire world before he dies. Michael takes him on a cosmic tour: they fly above the earth on a chariot of cherubim, watching humanity in all its varied activity — murders, ad", "close": "The man who argued with God. Now arguing with death. He loses eventually.", "quote": "\"Do not tell me of death, for death has never been heard of by my mouth, nor has the name of death passed over my lips. I will not go with you.\""}, {"id": "acts-of-andrew", "title": "The Acts of Andrew", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "2nd century. The apostle Andrew's mission to Greece and his death on the X-shaped cross. Condemned by Pope Innocent I in 405 AD. Contains radical teachings on celibacy and contempt", "desc": "The Acts of Andrew describes the apostle Andrew's mission to Achaia in Greece, his miraculous deeds, his preaching of a philosophy that amounts to radical world-denial, and his eventual martyrdom on a cross shaped like an X — the cross of Saint Andrew still carried on the Scottish flag. Pope Innocent I condemned the Acts of Andrew in 405 AD as full of lies and dangerous theology, which ensured its", "close": "How Andrew died. The speech from the cross the Church destroyed. Partially.", "quote": "\"O cross, well-constructed! O cross, well-fitted! O cross, glorious and triumphant! O cross, planted in the earth, bearing thy fruit in the heavens!\""}, {"id": "third-baruch", "title": "3 Baruch", "sub": "The Greek Apocalypse of Baruch", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "1st–3rd century. Jeremiah's secretary Baruch tours the five heavens and discovers the fate of the fallen angels, the origin of the vine, and where the souls of the righteous and wi", "desc": "3 Baruch is an apocalypse in the tradition of Enoch: the scribe Baruch, weeping over the destruction of Jerusalem by Nebuchadnezzar, is guided by an angel through five heavens and shown the secrets of the cosmos. He sees the builders of the Tower of Babel transformed into animals; he sees the Phoenix bird that flies before the sun, carrying its light on its wings; he watches the angels bring the p", "close": "Five heavens. The bird that carries the sun. The angel who planted the vine.", "quote": "\"And I, Baruch, said: What is this bird? And the angel said: This is the guardian of the world. When the sun goes forth in the morning, this bird stretches its wings and receives the fiery rays of the sun.\""}, {"id": "testament-of-job", "title": "The Testament of Job", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "1st century BC–1st century AD. Job's own account of his sufferings and his daughters' inheritance of divine language. A radically different version of the most asked question in th", "desc": "The Testament of Job retells the Book of Job as Job's own deathbed testament to his children. In this version, Job is not a passive sufferer but a champion who knows exactly what is happening to him — who understands that Satan is attacking him with God's permission and endures willingly, confident of his ultimate vindication. The theology of suffering is thereby transformed: the canonical Job's a", "close": "Job's daughters inherited a language. The Bible hid it. Here it is.", "quote": "\"And the first daughter put on her sash, and she uttered an ecstatic utterance in the angelic dialect, and sent up a hymn to God after the manner of the angels.\""}, {"id": "book-of-tobit", "title": "The Book of Tobit", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "3rd–2nd century BC. An Israelite exile, his blind father, and an angel in disguise. Contains the earliest named archangel, Raphael. In Catholic Bibles for centuries; removed at the", "desc": "The Book of Tobit is the story of two families: the pious Israelite Tobit, blinded by bird droppings while performing an act of charity, and the beautiful Sara, whose seven husbands have each been killed on their wedding night by the demon Asmodeus. Their families are connected across the diaspora by a debt and by the angel Raphael — the first named archangel in Jewish literature — who disguises h", "close": "In the Catholic Bible. Removed at the Reformation. The demon, the angel, the cure.", "quote": "\"I am Raphael, one of the seven holy angels, which present the prayers of the saints, and which go in and out before the glory of the Holy One.\""}, {"id": "book-of-judith", "title": "The Book of Judith", "sub": "Complete Edition", "tag": "apocrypha", "cat": "Lost Scripture", "stamp": "2nd century BC. A widow seduces and beheads an Assyrian general to save her people. Too powerful a model of feminine authority. In Catholic Bibles; removed at the Reformation. Insp", "desc": "The Book of Judith is the story of a beautiful Jewish widow who saves her city by going alone into the camp of Holofernes, the general of Nebuchadnezzar's army, seducing him over three days, and then cutting off his head with his own sword while he sleeps in a drunken stupor. She carries the head back to her city in a food bag. The army, discovering their general's decapitation, panics and flees. ", "close": "A widow with a sword. The Reformation removed her from the Bible.", "quote": "\"The Lord hath struck him by the hand of a woman. As the Lord liveth, who hath kept me in my way that I went, my face hath deceived him unto his destruction, and yet hath he not committed sin with me.\""}, {"id": "exegesis-on-the-soul", "title": "The Exegesis on the Soul", "sub": "Nag Hammadi Library", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "2nd century. A Gnostic allegory of the soul as a fallen woman, prostituted to the world, who repents and is reunited with her divine husband. An erotic mysticism the Church could n", "desc": "The Exegesis on the Soul is a Gnostic text from the Nag Hammadi library that tells the story of the soul's fall and redemption through an extended metaphor: the soul is a virgin woman who falls from her Father's house into the world, where she is prostituted by robbers — the material powers — until she repents, turns her womb inward, and is reunited with her heavenly bridegroom in a bridal chamber", "close": "The soul as a woman betrayed by the world. The Church burned this metaphor.", "quote": "\"When the soul repents, the Father has mercy on her and makes her womb turn from the external domain and turn it again inward, so that the soul will regain her proper character.\""}, {"id": "book-of-thomas-contender", "title": "The Book of Thomas the Contender", "sub": "Nag Hammadi Library", "tag": "gnostic", "cat": "Gnostic Gospels", "stamp": "3rd century. The secret dialogue between Jesus and his twin Thomas, recorded by Mathaias. Jesus teaches that the fire of lust is the source of all suffering. Too close to Manichaei", "desc": "The Book of Thomas the Contender opens with Thomas the Apostle — traditionally identified as Jesus's twin brother — in conversation with Jesus shortly before the crucifixion. The text was written down by one Mathaias. Jesus teaches Thomas that the body is a beast, that sexuality is the fundamental fire from which all suffering emerges, and that the wise man must examine himself and achieve self-kn", "close": "What Jesus's twin brother wrote down privately. Burning with contempt for flesh.", "quote": "\"Woe to you who hope in the flesh and in the prison that will perish! How long will you be oblivious? The imperishables hope for the imperishable.\""}, {"id": "ladder-of-divine-ascent", "title": "The Ladder of Divine Ascent", "sub": "John Climacus", "tag": "mystery", "cat": "Mystery Schools", "stamp": "7th century. Thirty steps to mystical union with God, written by a monk who lived forty years in solitude. The most influential text of Eastern Christian mysticism. Suppressed in t", "desc": "The Ladder of Divine Ascent was written around 600 AD by John, the abbot of the monastery at the foot of Mount Sinai — a man later called John Climacus (\"of the Ladder\"). It describes thirty ascending steps of the spiritual life, from renunciation of the world through the virtues of the active life to the heights of contemplation, prayer, and divine love. For fourteen centuries it has been read al", "close": "Thirty steps to God. The West stopped climbing at the Reformation.", "quote": "\"A monk is a violence done to nature and a wrestling with the senses. A monk is continual worship of God and service before God.\""}];
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════
+   CATEGORY CONFIG
+═══════════════════════════════════════════════════════ */
+const CATS = [
+  {tag:'all',    label:'All Texts',       color:'#E8160C'},
+  {tag:'gnostic',label:'Gnostic Gospels', color:'#8B7CF6'},
+  {tag:'apocrypha',label:'Lost Scripture',color:'#E8160C'},
+  {tag:'hermetic',label:'Hermetic Arts',  color:'#C5A028'},
+  {tag:'mystery', label:'Mystery Schools',color:'#3D9970'},
+  {tag:'ancient', label:'Ancient Wisdom', color:'#D4752A'},
+  {tag:'kabbalah',label:'Jewish Mysticism',color:'#6B9FC4'},
+];
+
+let activeTag = 'all';
+let searchQuery = '';
+let currentBook = null;
+
+/* ═══════════════════════════════════════════════════════
+   RENDER FILTER BAR
+═══════════════════════════════════════════════════════ */
+function renderFilterBar() {
+  const bar = document.getElementById('filterBar');
+  bar.innerHTML = CATS.map(c => {
+    const count = c.tag === 'all' ? BOOKS.length : BOOKS.filter(b => b.tag === c.tag).length;
+    return `<button class="ftab${c.tag==='all'?' active':''}" data-tag="${c.tag}" onclick="setFilter('${c.tag}',this)">
+      ${c.label}<span class="count">${count}</span>
+    </button>`;
+  }).join('');
+}
+
+/* ═══════════════════════════════════════════════════════
+   RENDER BOOK GRID
+═══════════════════════════════════════════════════════ */
+function getCatColor(tag) {
+  const c = CATS.find(x => x.tag === tag);
+  return c ? c.color : '#E8160C';
+}
+function getCatLabel(tag) {
+  const c = CATS.find(x => x.tag === tag);
+  return c ? c.label : 'Mystery Schools';
+}
+
+function coverTitleLines(title) {
+  // Split long titles for cover display
+  if (title.length <= 18) return `<div class="book-cover-title">${title}</div>`;
+  const words = title.split(' ');
+  const half = Math.ceil(words.length / 2);
+  const l1 = words.slice(0, half).join(' ');
+  const l2 = words.slice(half).join(' ');
+  return `<div class="book-cover-title">${l1}<br>${l2}</div>`;
+}
+
+function renderBook(b) {
+  const catColor = getCatColor(b.tag);
+  const catLabel = getCatLabel(b.tag);
+  const bStr = JSON.stringify(b).replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return `<div class="book-card tag-${b.tag}" data-tag="${b.tag}" data-title="${b.title.toLowerCase()}" onclick='openDrawer(${bStr})'>
+    <div class="book-cover">
+      <div class="book-cover-top-rule"></div>
+      <div class="book-cover-inner">
+        <div class="book-cover-cat-line">${catLabel}</div>
+        ${coverTitleLines(b.title)}
+        <div class="book-cover-sub">${b.sub}</div>
+      </div>
+      <div class="book-cover-bottom">
+        <div class="book-cover-logo">Codexiso</div>
+        <div class="book-cover-price-tag">£1.99</div>
+      </div>
+    </div>
+    <div class="book-info">
+      <div class="book-info-title">${b.title}</div>
+      <div class="book-info-close">${b.close}</div>
+      <div class="book-info-foot">
+        <span class="book-cat-badge">${catLabel}</span>
+        <button class="book-unlock-btn" onclick="event.stopPropagation();openModal(${bStr.replace(/'/g,'&#39;')})">Unlock</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderBooks() {
+  const grid = document.getElementById('booksGrid');
+  const q = searchQuery.trim().toLowerCase();
+  let list = BOOKS;
+  if (activeTag !== 'all') list = list.filter(b => b.tag === activeTag);
+  if (q) list = list.filter(b =>
+    b.title.toLowerCase().includes(q) ||
+    b.close.toLowerCase().includes(q) ||
+    b.stamp.toLowerCase().includes(q) ||
+    b.cat.toLowerCase().includes(q)
+  );
+  document.getElementById('bookCount').textContent = `${list.length} text${list.length!==1?'s':''}`;
+  grid.innerHTML = list.map(renderBook).join('');
+}
+
+function setFilter(tag, btn) {
+  activeTag = tag;
+  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderBooks();
+}
+
+function doSearch(val) {
+  searchQuery = val;
+  renderBooks();
+}
+
+/* ═══════════════════════════════════════════════════════
+   DETAIL DRAWER
+═══════════════════════════════════════════════════════ */
+function openDrawer(b) {
+  currentBook = b;
+  const catColor = getCatColor(b.tag);
+  const catLabel = getCatLabel(b.tag);
+
+  document.getElementById('drawerBody').innerHTML = `
+    <div class="drawer-book-cover book-cover tag-${b.tag}">
+      <div class="book-cover-top-rule"></div>
+      <div class="book-cover-inner">
+        <div class="book-cover-cat-line">${catLabel}</div>
+        ${coverTitleLines(b.title)}
+        <div class="book-cover-sub">${b.sub}</div>
+      </div>
+      <div class="book-cover-bottom">
+        <div class="book-cover-logo">Codexiso</div>
+        <div class="book-cover-price-tag">£1.99</div>
+      </div>
+    </div>
+    <span class="drawer-cat-badge tag-${b.tag}" style="background:${catColor}1a;color:${catColor}">${catLabel}</span>
+    <h2 class="drawer-title">${b.title}</h2>
+    <div class="drawer-sub">${b.sub}</div>
+    <div class="drawer-stamp-label">Suppression History</div>
+    <div class="drawer-stamp">${b.stamp}</div>
+    ${b.desc ? `<div class="drawer-desc">${b.desc}</div>` : ''}
+    ${b.quote ? `<div class="drawer-quote"><p>${b.quote}</p></div>` : ''}
+    ${b.close ? `<div class="drawer-close-line">"${b.close}"</div>` : ''}
+  `;
+
+  document.getElementById('drawerBuyBtn').onclick = () => openModal(b);
+
+  document.getElementById('drawerOverlay').classList.add('on');
+  document.getElementById('drawer').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  document.getElementById('drawerOverlay').classList.remove('on');
+  document.getElementById('drawer').classList.remove('on');
+  document.body.style.overflow = '';
+}
+
+function handleDrawerClick(e) {
+  if (e.target === document.getElementById('drawerOverlay')) closeDrawer();
+}
+
+/* ═══════════════════════════════════════════════════════
+   PURCHASE MODAL
+═══════════════════════════════════════════════════════ */
+function openModal(b) {
+  currentBook = b;
+  const catColor = getCatColor(b.tag);
+  const catLabel = getCatLabel(b.tag);
+
+  // Mini cover
+  document.getElementById('mMiniRule').style.background = catColor;
+  document.getElementById('mMiniCat').style.color = catColor;
+  document.getElementById('mMiniCat').textContent = catLabel;
+  document.getElementById('mMiniTitle').textContent = b.title;
+  document.getElementById('mTitle').textContent = b.title;
+  document.getElementById('mCat').textContent = catLabel;
+  document.getElementById('cardForm').classList.remove('show');
+  document.getElementById('cardToggle').textContent = 'Enter Card Details';
+  document.getElementById('modalOverlay').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('on');
+  document.body.style.overflow = '';
+}
+
+function handleModalClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function toggleCard() {
+  const f = document.getElementById('cardForm');
+  const b = document.getElementById('cardToggle');
+  f.classList.toggle('show');
+  b.textContent = f.classList.contains('show') ? 'Hide Card Form' : 'Enter Card Details';
+}
+
+function pay(method) {
+  closeModal();
+  setTimeout(() => {
+    const title = currentBook ? currentBook.title : 'Your text';
+    document.getElementById('successMsg').textContent =
+      `"${title}" is ready for download. This knowledge survived centuries of suppression. Guard it well.`;
+    document.getElementById('successOverlay').classList.add('on');
+  }, 200);
+}
+
+function closeSuccess() {
+  document.getElementById('successOverlay').classList.remove('on');
+  document.body.style.overflow = '';
+}
+
+function fmtCard(input) {
+  let v = input.value.replace(/\D/g,'');
+  input.value = v.match(/.{1,4}/g)?.join(' ') || v;
+}
+
+/* ═══════════════════════════════════════════════════════
+   TICKER
+═══════════════════════════════════════════════════════ */
+function buildTicker() {
+  const items = BOOKS.filter((_,i) => i % 7 === 0).map(b => b.title);
+  const html = items.map(t => `<span class="tick-item"><span class="tick-dot">·</span>${t}</span>`).join('');
+  const track = document.getElementById('ticker');
+  track.innerHTML = html + html;
+}
+
+/* ═══════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════ */
+renderFilterBar();
+renderBooks();
+buildTicker();
+</script>
+
+</body>
+</html>
